@@ -1,0 +1,88 @@
+# encoding: UTF-8
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of Active Record to
+# incrementally modify your database, and then regenerate this schema definition.
+#
+# Note that this schema.rb definition is the authoritative source for your
+# database schema. If you need to create the application database on another
+# system, you should be using db:schema:load, not running all the migrations
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
+# you'll amass, the slower it'll run and the greater likelihood for issues).
+#
+# It's strongly recommended that you check this file into your version control system.
+
+ActiveRecord::Schema.define(version: 20150130231636) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "admin_users", force: :cascade do |t|
+    t.string   "username",        limit: 50
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "admin_users", ["username"], name: "index_admin_users_on_username", using: :btree
+
+  create_table "event_items", force: :cascade do |t|
+    t.text     "short_entry"
+    t.text     "long_entry"
+    t.string   "event_date",     limit: 150
+    t.datetime "event_datetime"
+    t.datetime "created_at",                 null: false
+    t.integer  "position"
+    t.datetime "updated_at",                 null: false
+  end
+
+  create_table "file_entries", force: :cascade do |t|
+    t.string   "name",        limit: 275
+    t.text     "description"
+    t.integer  "type"
+    t.string   "link"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  create_table "headers", force: :cascade do |t|
+    t.string   "name",           limit: 175
+    t.string   "header_content", limit: 575
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  create_table "mineral_data", force: :cascade do |t|
+    t.string   "mine_name",  limit: 175
+    t.string   "mine_data",              default: [],              array: true
+    t.integer  "data_type"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  create_table "news_items", force: :cascade do |t|
+    t.string   "short_entry", limit: 375
+    t.text     "long_entry"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "news_items", ["created_at"], name: "index_news_items_on_created_at", using: :btree
+
+  create_table "staff_entries", force: :cascade do |t|
+    t.string   "name",            limit: 75
+    t.integer  "position"
+    t.text     "summary"
+    t.boolean  "is_board_member",             default: false
+    t.string   "appointed_date",  limit: 175
+    t.string   "committee1",      limit: 175
+    t.string   "committee2",      limit: 175
+    t.string   "committee3",      limit: 175
+    t.string   "committee4",      limit: 175
+    t.string   "photo1",          limit: 175
+    t.string   "photo2",          limit: 175
+    t.integer  "section"
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+  end
+
+end

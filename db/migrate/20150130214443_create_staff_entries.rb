@@ -4,7 +4,7 @@ class CreateStaffEntries < ActiveRecord::Migration
 			t.string "name", :limit => 75
       t.string "position", :limit => 175
       t.text "summary", :limit => 5000
-      t.boolean "is_board_member" :default => false
+      t.boolean "is_board_member", :default => false
       t.string "appointed_date", :limit => 175
       t.string "committee1", :limit => 175
       t.string "committee2", :limit => 175
