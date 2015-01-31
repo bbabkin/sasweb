@@ -2,7 +2,6 @@ class CreateStaffEntries < ActiveRecord::Migration
   def change
     create_table :staff_entries do |t|
 			t.string "name", :limit => 75
-      t.string "position", :limit => 175
       t.text "summary", :limit => 5000
       t.boolean "is_board_member", :default => false
       t.string "appointed_date", :limit => 175

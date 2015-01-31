@@ -1,0 +1,70 @@
+class Admin::ProductsController < ApplicationController
+
+  layout "admin"
+  
+
+  before_action :confirm_logged_in
+
+  def index
+    @mineraldata = MineralDatum.sorted
+
+  end
+
+  def show
+    @mineraldatum = MineralDatum.find(params[:id])
+  end
+
+  def new
+    @mineraldatum = MineralDatum.new()
+
+    @mineraldatum_count = MineralDatum.count + 1
+  end
+
+  def create
+    @mineraldatum = MineralDatum.new(mineraldatum_params)
+      if @mineraldatum.save
+      flash[:notice] = "Mineral data created successfully."
+      redirect_to(:action => 'index')
+    else
+      @mineraldatum_count = MineralDatum.count + 1
+      render('new')
+    end
+  end
+
+  def edit
+    @mineraldatum = MineralDatum.find(params[:id])
+    @mineraldatum_count = MineralDatum.count
+  end
+
+  def update
+    @mineraldatum = MineralDatum.find(params[:id])
+    if @mineraldatum.update_attributes(mineraldatum_params)
+      flash[:notice] = "Mineral data updated successfully."
+      # redirect_to(:action => 'show', :id => @product.id, :line_id => @line.id)
+      redirect_to(:action => 'index')
+    else
+      @mineraldatum_count = MineralDatum.count
+      render('edit')
+    end
+  end
+
+  def delete
+    @mineraldatum = MineralDatum.find(params[:id])
+  end
+
+  def destroy
+    #v-maybe @ shouldnt be here
+    @mineraldatum = MineralDatum.find(params[:id]).destroy
+    flash[:notice] = "Mineral data removed successfully."
+    redirect_to(:action => 'index')
+  end
+
+
+  private
+
+    def product_params
+      params.require(:mineral_datum).permit(:mine_name, :mine_data, :data_type)
+    end
+
+
+end
