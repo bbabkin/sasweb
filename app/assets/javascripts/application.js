@@ -13,7 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.turbolinks
+//= require scripts
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require underscore
 //= require tinymce-jquery
+//= require highstocks
+//= require highstocks/themes/sand-signika
+//= require highstocks/modules/exporting
+//= require highstocks/modules/data
+//= require highstocks/modules/canvas-tools

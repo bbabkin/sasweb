@@ -1,0 +1,9 @@
+- @page_title = "Remove file"
+= link_to("<< Back to List", {:action => 'index',}, :class => 'back-link')
+.news.delete
+  %h2 Remove file entry
+  = form_for(:file_entry, :method => :delete, :url => {:action => 'destroy', :id => @fileentry.id}) do |f|
+    %p Are you sure you want to permanently remove this file entry?
+    %p.reference-name= @fileentry.name
+    .form-buttons
+      = submit_tag("Delete Entry")

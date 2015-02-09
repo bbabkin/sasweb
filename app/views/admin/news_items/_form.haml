@@ -1,0 +1,13 @@
+%table{:summary => "News Article form fields"}
+	%tr
+		%th= f.label(:short_entry, "article spotlight")
+		%td= f.text_field(:short_entry , :size=> '60x2')
+	%tr
+		%th= f.label(:long_entry, "full article")
+		%td= f.text_area :long_entry, :class => "tinymce", :rows => 20, :cols => 150
+	%tr
+		%th= f.label(:created_at, "publication date")
+		%td= f.datetime_select(:created_at)
+	%tr
+		%th= f.label(:permalink, "link")
+		%td= f.text_field(:permalink)

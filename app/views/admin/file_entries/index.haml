@@ -1,0 +1,43 @@
+- @page_title = "files"
+= link_to("Back to admin menu", admin_path, :class => 'btn btn-primary')
+%br
+%br
+= link_to("Add new file", {:action => 'new'}, :class => 'btn btn-success') 
+
+%table.admintable{:summary => "File list"}
+  %tr.header
+    %th ID;
+    %th Name
+    %th Preview
+    %th Type
+    %th Actions
+  - @fileentries.each do |fileentry|
+    %tr{:class => cycle('odd', 'even')}
+      %td= fileentry.id
+      %td= fileentry.name
+      - if fileentry.file.thumb.url
+        %td= image_tag fileentry.file.url
+      -else 
+        %td No Image
+      -if fileentry.file_type == 1
+        %td Gallery Entry: Photo
+      -elsif fileentry.file_type == 2
+        %td Gallery Entry: Map
+      -elsif fileentry.file_type == 3
+        %td Gallery Entry: Video
+      -elsif fileentry.file_type == 4
+        %td Gallery Entry: Animation
+      -elsif fileentry.file_type == 5
+        %td Annual/Interim Report
+      -elsif fileentry.file_type == 6
+        %td Technical Report
+      -elsif fileentry.file_type == 7
+        %td Presentation
+      -else
+        .error Error: Unknown Type
+      %td.actions
+        = link_to("Show", admin_file_entry_path(fileentry), class: "btn btn-primary")
+        = link_to("Edit", edit_admin_file_entry_path(fileentry), class: "btn btn-primary")
+        = link_to("Delete", delete_admin_file_entry_path(fileentry), class: "btn btn-danger")
+
+

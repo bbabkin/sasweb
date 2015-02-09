@@ -1,0 +1,24 @@
+- @page_title = "News"
+= link_to("Back to admin menu", admin_path, :class => 'btn btn-primary')
+%br
+%br
+.news.index
+  = link_to("Add new article", {:action => 'new'}, :class => 'btn btn-success') 
+  
+  %table.admintable{:summary => "Article list"}
+    %tr.header
+      %th ID;
+      %th Date created
+      %th short description
+      %th Actions
+    - @newsitems.each do |newsitem|
+      %tr{:class => cycle('odd', 'even')}
+        %td= newsitem.id
+        %td= newsitem.created_at
+        %td= newsitem.short_entry
+        %td.actions
+          = link_to("Show", admin_news_item_path(newsitem), class: "btn btn-primary")
+          = link_to("Edit", edit_admin_news_item_path(newsitem), class: "btn btn-primary")
+          = link_to("Delete", delete_admin_news_item_path(newsitem), class: "btn btn-danger")
+
+

@@ -1,0 +1,8 @@
+- @page_title = "Update File Entry"
+= link_to("<< Back to List", {:action => 'index', :class => 'back-link'})
+.news.new
+  %h2 Update file entry
+  = form_for [:admin, @fileentry], :html => {:multipart => true} do |f|
+    = render(:partial => "form", :locals => {:f => f})
+    .form-buttons
+      = submit_tag("update file")

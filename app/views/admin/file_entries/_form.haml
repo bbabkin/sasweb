@@ -1,0 +1,22 @@
+%table{:summary => "file entry form fields"}
+	%tr
+		%th= f.label(:name, "entry name")
+		%td= f.text_field :name
+	%tr
+		%th= f.label(:description, "entry description")
+		%td= f.text_field :description
+	
+		%th= f.label :file_type, "choose appropriate section"
+		%td= f.select :file_type, 
+		options_for_select([['Gallery Entry: Photo','1'],['Gallery Entry: Map','2'],['Gallery Entry: Video','3'],['Gallery Entry: Animation','4'],['Annual/Interim Report','5'],['Technical Report','6'],['Presentation','7']], params[:section]),
+		{}
+	%tr
+		%th= f.label :created_at, "created at"
+		%td= f.datetime_select :created_at
+	%tr
+		%th= f.label :file, "file"
+		%td= f.file_field :file
+	%tr
+		%th= f.label :permalink, "link"
+		%td= f.text_field :permalink
+		

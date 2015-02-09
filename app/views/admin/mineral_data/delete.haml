@@ -1,0 +1,9 @@
+- @page_title = "Delete Mineral Data"
+= link_to("<< Back to List", {:action => 'index',}, :class => 'back-link')
+.news.delete
+  %h2 Delete Mineral Data
+  = form_for(:product, :method => :delete, :url => {:action => 'destroy', :id => @mineraldatum.id}) do |f|
+    %p Are you sure you want to permanently delete this mineral data?
+    %p.reference-name= @mineraldatum.short_entry
+    .form-buttons
+      = submit_tag("Delete Mineral Data")

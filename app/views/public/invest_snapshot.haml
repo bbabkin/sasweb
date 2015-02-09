@@ -1,0 +1,35 @@
+%h1 Investors Snapshot
+#saschart{:style => "width:100%; height:600px;"}
+-sasdata = YahooFinance.quotes(["sas.to"], [:last_trade_price, :change, :change_in_percent, :bid, :bid_size, :ask, :ask_size, :low, :high, :open, :previous_close, :volume])
+%table
+	%tr
+		%th
+			Last
+		%td
+			=sasdata[0].last_trade_price
+	%tr
+		%th
+			Last
+		%td
+			=sasdata[0].last_trade_price
+	%tr
+		%th
+			Last
+		%td
+			=sasdata[0].last_trade_price
+	%tr
+		%th
+			Last
+		%td
+			=sasdata[0].last_trade_price
+	%tr
+		%th
+			Last
+		%td
+			=sasdata[0].last_trade_price
+	%tr
+		%th
+			Last
+		%td
+			=sasdata[0].last_trade_price
+	

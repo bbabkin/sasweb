@@ -1,0 +1,6 @@
+- @page_title = "New File Entry"
+= link_to("Back to File List", {:action => 'index'}, :class => 'btn btn-primary')
+= form_for [:admin, @fileentry], :html => {:multipart => true} do |f|
+	= render(:partial => "form", :locals => {:f => f})
+	.form-buttons
+		= submit_tag("create entry", :class => 'btn btn-primary')

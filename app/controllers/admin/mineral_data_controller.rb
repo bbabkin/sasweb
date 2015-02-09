@@ -1,4 +1,4 @@
-class Admin::ProductsController < ApplicationController
+class Admin::MineralDataController < ApplicationController
 
   layout "admin"
   
@@ -6,7 +6,7 @@ class Admin::ProductsController < ApplicationController
   before_action :confirm_logged_in
 
   def index
-    @mineraldata = MineralDatum.sorted
+    @mineraldata = MineralDatum.newest_first
 
   end
 
@@ -21,7 +21,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def create
-    @mineraldatum = MineralDatum.new(mineraldatum_params)
+    @mineraldatum = MineralDatum.new(mineral_data_params)
       if @mineraldatum.save
       flash[:notice] = "Mineral data created successfully."
       redirect_to(:action => 'index')
@@ -38,7 +38,7 @@ class Admin::ProductsController < ApplicationController
 
   def update
     @mineraldatum = MineralDatum.find(params[:id])
-    if @mineraldatum.update_attributes(mineraldatum_params)
+    if @mineraldatum.update_attributes(mineral_data_params)
       flash[:notice] = "Mineral data updated successfully."
       # redirect_to(:action => 'show', :id => @product.id, :line_id => @line.id)
       redirect_to(:action => 'index')
@@ -62,7 +62,7 @@ class Admin::ProductsController < ApplicationController
 
   private
 
-    def product_params
+    def mineral_data_params
       params.require(:mineral_datum).permit(:mine_name, :mine_data, :data_type)
     end
 

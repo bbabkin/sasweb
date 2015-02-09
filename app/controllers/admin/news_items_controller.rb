@@ -1,4 +1,4 @@
-class Admin::ProductsController < ApplicationController
+class Admin::NewsItemsController < ApplicationController
 
   layout "admin"
   
@@ -7,7 +7,7 @@ class Admin::ProductsController < ApplicationController
 
 
   def index
-    @newsitems = NewsItem.sorted
+    @newsitems = NewsItem.newest_first
 
   end
 
@@ -16,18 +16,19 @@ class Admin::ProductsController < ApplicationController
   end
 
   def new
-    @newsitem = NewsItem.new()
+    @newsitem = NewsItem.new(params[:id])
 
     @newsitem_count = NewsItem.count + 1
   end
 
   def create
-    @newsitem = NewsItem.new(newsitem_params)
+    @newsitem = NewsItem.new(news_item_params)
       if @newsitem.save
       flash[:notice] = "News article created successfully."
       redirect_to(:action => 'index')
     else
       @newsitem_count = NewsItem.count + 1
+      flash[:notice] = "News article failed to create."
       render('new')
     end
   end
@@ -39,7 +40,7 @@ class Admin::ProductsController < ApplicationController
 
   def update
     @newsitem = NewsItem.find(params[:id])
-    if @newsitem.update_attributes(newsitem_params)
+    if @newsitem.update_attributes(news_item_params)
       flash[:notice] = "News article updated successfully."
       # redirect_to(:action => 'show', :id => @product.id, :line_id => @line.id)
       redirect_to(:action => 'index')
@@ -63,8 +64,8 @@ class Admin::ProductsController < ApplicationController
 
   private
 
-    def product_params
-      params.require(:news_item).permit(:short_entry, :long_entry)
+    def news_item_params
+      params.require(:news_item).permit(:short_entry, :long_entry, :created_at, :permalink)
     end
 
 

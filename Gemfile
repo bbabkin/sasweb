@@ -17,6 +17,7 @@ gem 'sass-rails', '~> 5.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
+
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -26,6 +27,8 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 #gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'carrierwave'
+gem 'carrierwave-video'
+gem 'carrierwave-video-thumbnailer'
 gem 'rmagick', require: false 
 
 gem 'bcrypt', '~> 3.1.7'
@@ -37,7 +40,9 @@ gem 'aws-sdk'
 gem 'tinymce-rails'
 # gem 'unf'
 gem 'gmaps4rails'
-
+gem 'simple_form'
+gem "highstocks-rails"
+gem 'yahoo-finance'
 # gem 'i18n'
 # gem 'redis'
 

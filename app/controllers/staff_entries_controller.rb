@@ -1,4 +1,4 @@
-class ProductsController < ApplicationController
+class StaffEntriesController < ApplicationController
 
 layout 'public'
 

@@ -1,4 +1,4 @@
-class Admin::ProductsController < ApplicationController
+class Admin::EventItemsController < ApplicationController
 
   layout "admin"
   
@@ -21,7 +21,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def create
-    @eventitem = EventItem.new(eventitem_params)
+    @eventitem = EventItem.new(event_item_params)
       if @eventitem.save
       flash[:notice] = "Event entry created successfully."
       redirect_to(:action => 'index')
@@ -38,7 +38,7 @@ class Admin::ProductsController < ApplicationController
 
   def update
     @eventitem = EventItem.find(params[:id])
-    if @eventitem.update_attributes(eventitem_params)
+    if @eventitem.update_attributes(event_item_params)
       flash[:notice] = "Event entry updated successfully."
       # redirect_to(:action => 'show', :id => @product.id, :line_id => @line.id)
       redirect_to(:action => 'index')
@@ -62,8 +62,8 @@ class Admin::ProductsController < ApplicationController
 
   private
 
-    def product_params
-      params.require(:event_item).permit(:short_entry, :long_entry, :event_datetime, :position)
+    def event_item_params
+      params.require(:event_item).permit(:short_entry, :long_entry, :event_date, :position, :permalink)
     end
 
 

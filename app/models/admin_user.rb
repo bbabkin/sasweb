@@ -25,11 +25,11 @@ class AdminUser < ActiveRecord::Base
 
 
 
-  scope :sorted, lambda { order("last_name ASC, first_name ASC") }
+  scope :sorted, lambda { order("username ASC") }
 
-  def name
-    "#{first_name} #{last_name}"
+  #def name
+    #{}"#{first_name} #{last_name}"
     # Or: first_name + ' ' + last_name
     # Or: [first_name, last_name].join(' ')
-  end
+  #end
 end

@@ -1,56 +1,107 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  
+  root "public#index"
+  #match ':controller(/:action(/:id))', :via => [:get, :post]
+  get "public/news" 
+  get "public/careers"
+  get "public/disclamer"
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  #==CORPORATE=========
+  get "public/corporate" 
+  get "public/profile"
+  get "public/directors" 
+  get "public/management" 
+  get "public/corp_responsibility"
+  get "public/governance" 
+  get "public/whistleblower"
+  get "public/information" 
+ 
+  #==OPERATIONS=========
+  get "public/operations" 
+  get "public/timmins"
+  get "public/history"
+  get "public/regional_geo" 
+  get "public/holt_mine" 
+  get "public/holloway_mine"
+  get "public/hislop_mine" 
+  get "public/holt_mill" 
+  get "public/exploration" 
+  get "public/adv_projects"
+  get "public/regional_exp" 
+  get "public/reserves_resources"
+  get "public/tech_reports"
+  get "public/gallery"
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  #====INVESTORS=======
+  get "public/invest_snapshot"
+  get "public/financial_database"
+  get "public/events"
+  get "public/presentations"
+  get "public/annual_reports"
+  get "public/services"
+  get "public/links"
+  get "public/sas_tv"
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  #====CONTACT=======
+  get "public/contact_info"
+  get "public/request_info"
+  get "public/send_message"
+  get "public/feedback"
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+  
+  resources :news_items do
+  end
+  resources :event_items do
+  end
+  resources :file_entries do
+  end
+  resources :staff_entries do
+  end
+  resources :mineral_data do
+  end
+  resources :headers do
+  end
 
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  
+  get 'admin', :to => "admin/access#index"
+  namespace :admin do
+    resources :admin_users do
+    end
+    get 'logout', :to => "access#logout"
+    get 'login', :to => "access#login"
+    get 'attempt_login', :to => "access#attempt_login"
+    post 'attempt_login', :to => "access#attempt_login"
+    
+    resources :news_items do
+      member do
+        get :delete
+      end
+    end
+    resources :event_items do
+      member do
+        get :delete
+      end
+    end    
+    resources :file_entries do
+      member do
+        get :delete
+      end
+    end   
+    resources :mineral_data do
+      member do
+        get :delete
+      end
+    end   
+    resources :staff_entries do
+      member do
+        get :delete
+      end
+    end
+    resources :headers do
+      member do
+        get :delete
+      end
+    end  
+  end
 end

@@ -1,0 +1,6 @@
+- @page_title = "New Event"
+= link_to("Back to Event List", {:action => 'index'}, :class => 'btn btn-primary')
+= form_for [:admin, @eventitem], :html => {:multipart => true} do |f|
+	= render(:partial => "form", :locals => {:f => f})
+	.form-buttons
+		= submit_tag("Create Event", :class => 'btn btn-primary')

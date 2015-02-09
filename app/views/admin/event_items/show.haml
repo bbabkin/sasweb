@@ -1,0 +1,9 @@
+- @page_title = "Show Event"
+= link_to("Back to Event List", {:action => 'index'}, :class => 'btn btn-primary')
+%br
+%br
+= @eventitem.short_entry.html_safe
+%br
+%hr
+%br
+= @eventitem.long_entry.html_safe

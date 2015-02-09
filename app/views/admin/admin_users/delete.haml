@@ -1,0 +1,9 @@
+- @page_title = "Delete Admin User: #{@admin_user.name}"
+= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link')
+.user.delete
+  %h2 Delete Admin User
+  = form_for(:admin_user, :url => {:action => 'destroy', :id => @admin_user.id}) do |f|
+    %p Are you sure you want to permanently delete this admin user?
+    %p.reference-name= @admin_user.name
+    .form-buttons
+      = submit_tag("Delete Admin User")

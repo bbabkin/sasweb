@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150130231636) do
+ActiveRecord::Schema.define(version: 20150209043041) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,48 +29,57 @@ ActiveRecord::Schema.define(version: 20150130231636) do
     t.text     "short_entry"
     t.text     "long_entry"
     t.string   "event_date",     limit: 150
+    t.string   "permalink",      limit: 175
     t.datetime "event_datetime"
-    t.datetime "created_at",                 null: false
     t.integer  "position"
+    t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
 
   create_table "file_entries", force: :cascade do |t|
     t.string   "name",        limit: 275
     t.text     "description"
-    t.integer  "type"
-    t.string   "link"
+    t.integer  "file_type"
+    t.string   "permalink",   limit: 175
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+    t.string   "file"
   end
 
   create_table "headers", force: :cascade do |t|
-    t.string   "name",           limit: 175
-    t.string   "header_content", limit: 575
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.string   "name",       limit: 175
+    t.string   "content",    limit: 575
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "mineral_data", force: :cascade do |t|
     t.string   "mine_name",  limit: 175
-    t.string   "mine_data",              default: [],              array: true
     t.integer  "data_type"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "mine_data",              default: [],              array: true
   end
 
   create_table "news_items", force: :cascade do |t|
     t.string   "short_entry", limit: 375
+    t.string   "permalink",   limit: 175
     t.text     "long_entry"
+    t.string   "news_date",   limit: 150
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
 
-  add_index "news_items", ["created_at"], name: "index_news_items_on_created_at", using: :btree
+  create_table "shares", force: :cascade do |t|
+    t.string   "type",        limit: 175
+    t.integer  "amount"
+    t.string   "amount_text"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
 
   create_table "staff_entries", force: :cascade do |t|
     t.string   "name",            limit: 75
-    t.integer  "position"
     t.text     "summary"
     t.boolean  "is_board_member",             default: false
     t.string   "appointed_date",  limit: 175
@@ -81,8 +90,11 @@ ActiveRecord::Schema.define(version: 20150130231636) do
     t.string   "photo1",          limit: 175
     t.string   "photo2",          limit: 175
     t.integer  "section"
+    t.integer  "position"
+    t.string   "permalink",       limit: 175
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
+    t.string   "title"
   end
 
 end

@@ -1,0 +1,6 @@
+- @page_title = "New Team Member"
+= link_to("Back to Team Member List", {:action => 'index'}, :class => 'btn btn-primary')
+= form_for [:admin, @staffentry], :html => {:multipart => true} do |f|
+	= render(:partial => "form", :locals => {:f => f})
+	.form-buttons
+		= submit_tag("create entry", :class => 'btn btn-primary')

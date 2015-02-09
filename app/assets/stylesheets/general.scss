@@ -1,0 +1,100 @@
+/*---OVERRIDES---*/
+$mainfont: Muli,'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+
+html { 
+	background-color: #eee;
+	min-height: 100%;
+}
+body{
+	min-height: 100%;
+	font-size:100%;
+	font-family: $mainfont !important;
+}
+	// -webkit-background-size: cover; 
+	// -moz-background-size: cover; 
+	// background-size: cover; 
+	// -o-background-size: cover;
+
+.mainbox { 
+	min-height: 100%;
+	background-color: #eee; 
+
+}
+.rule {
+	padding: 0;
+	margin: 0;
+}
+/*---Layout---*/
+.relative {position:relative;height:0;}
+.absolute {position:absolute;}
+.block {display:block;width:100%;}
+.brdr {
+	border-style: solid;
+	border-width: 1px;
+	border-color: white;    
+}
+
+.pad { 
+	
+}
+.nopad {
+	padding: 0px !important;
+	
+} .tabl td { padding: 5px;} 
+img { border: none; } 
+
+.clear { clear: both; } 
+.center {    text-align: center;    ; }
+.floatleft {   float:left; } 
+.floatcenter {   margin: auto; } 
+
+.img-border {
+	float: none;
+	margin: 0 auto 0;
+	border: #999999 solid 1px;
+}
+
+.img-left {
+	float: none;
+	margin: 0 auto 0;
+}
+.w100{width:100%!important}
+.w80{width:80%}
+.w60{width:60%}
+/*-----HR--------*/
+.greyhr{
+color: #ccc;   clear: both;   height: 10px;   background-color: #ccc;
+padding: 0;   margin: 0;   border: 0px; } 
+
+.thingreyhr{   
+	color: #ccc;   
+	clear:both;   
+	height: 2px;   
+	background-color: #ccc;   
+	padding: 0;   
+	margin: 0;
+	border: 0; 
+}
+
+
+/*---Footer----*/
+.footer { 
+	color: #ccc;
+	clear: both;
+	height: 10px;
+	background-color: #ccc;
+	padding: 0;
+	border: 0;
+	.bottomnav{
+		margin: 0 auto;
+		ul{
+			display: inline;
+			list-style-type: none;	
+			li{
+				float: left;
+				padding: 0 px;
+				
+			}		
+		}
+	}
+}

@@ -1,0 +1,49 @@
+/*---OVERRIDES---*/
+$mainfont: Muli,'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+
+/*---BOOT---*/
+@import "bootstrap";
+
+/*---BUTTONS---*/
+.btn-sq {
+  @extend .btn-primary;
+  background-color: #333;
+  border-radius: 0px;
+}
+
+
+/*-------NAVBAR-----------*/
+.navbar-sas{
+	@extend .navbar-default;
+	background-color: #eee;
+	float: left;
+	border: 0;
+}
+
+.navbar-nav-sq {
+	@extend .navbar-nav;
+	li{
+		vertical-align: bottom;
+		margin-top: auto;
+		a{
+			color: #000;
+			padding-top: 0px;
+		}
+	}
+	a {
+		color : #ffff;
+		font-family: $mainfont;
+		font-size: 1.2em;
+	}
+}
+/*------CAROUSEL-------*/
+.carousel-control {
+  margin: 0;
+  padding: 0;
+}
+.mini-control-right,
+.mini-control-left{
+	opacity: 0;
+width: 50px;
+margin: 0 15px;
+}

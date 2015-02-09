@@ -13,6 +13,7 @@ class CreateStaffEntries < ActiveRecord::Migration
       t.string "photo2", :limit => 175
       t.integer "section"
       t.integer "position"
+      t.string "permalink", :limit => 175
       t.timestamps null: false
     end
   end

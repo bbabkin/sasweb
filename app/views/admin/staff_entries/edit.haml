@@ -1,0 +1,8 @@
+- @page_title = "Update Team member"
+= link_to("<< Back to Team member List", {:action => 'index', :class => 'back-link'})
+.news.new
+  %h2 Update Article
+  = form_for [:admin, @staffentry], :html => {:multipart => true} do |f|
+    = render(:partial => "form", :locals => {:f => f})
+    .form-buttons
+      = submit_tag("update team member info")

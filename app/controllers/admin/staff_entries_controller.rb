@@ -1,4 +1,4 @@
-class Admin::ProductsController < ApplicationController
+class Admin::StaffEntriesController < ApplicationController
 
   layout "admin"
   
@@ -21,7 +21,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def create
-    @staffentry = StaffEntry.new(staffentry_params)
+    @staffentry = StaffEntry.new(staff_entry_params)
       if @staffentry.save
       flash[:notice] = "Team member created successfully."
       redirect_to(:action => 'index')
@@ -38,7 +38,7 @@ class Admin::ProductsController < ApplicationController
 
   def update
     @staffentry = StaffEntry.find(params[:id])
-    if @staffentry.update_attributes(staffentry_params)
+    if @staffentry.update_attributes(staff_entry_params)
       flash[:notice] = "Team member updated successfully."
       # redirect_to(:action => 'show', :id => @product.id, :line_id => @line.id)
       redirect_to(:action => 'index')
@@ -62,13 +62,14 @@ class Admin::ProductsController < ApplicationController
 
   private
 
-    def product_params
-      params.require(:staffentry).permit(
+    def staff_entry_params
+      params.require(:staff_entry).permit(
         :name, 
-        :position,:section,:summary,
+        :position,:section,:summary,:title,
         :is_board_member, :appointed_date,
         :committee1,:committee2,:committee3,:committee4,
         :photo1,:photo2,
+        :permalink
         )
     end
 

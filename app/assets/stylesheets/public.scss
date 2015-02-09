@@ -1,0 +1,8 @@
+/*---OVERRIDES---*/
+$mainfont: Muli,'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+$mainfontweight: 600;
+$boldfontweight: 900;
+$navbarCollapseWidth: 300px;
+$grid-float-breakpoint: 600px;
+
+@import "general.scss";

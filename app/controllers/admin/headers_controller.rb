@@ -1,4 +1,4 @@
-class Admin::ProductsController < ApplicationController
+class Admin::HeadersController < ApplicationController
 
   layout "admin"
   
@@ -8,10 +8,6 @@ class Admin::ProductsController < ApplicationController
   def index
     @headers = Header.sorted
 
-  end
-
-  def show
-    @header = Header.find(params[:id])
   end
 
   def new
@@ -62,9 +58,8 @@ class Admin::ProductsController < ApplicationController
 
   private
 
-    def product_params
-                                            #redundant
-      params.require(:header).permit(:name, :header_content)
+    def header_params
+      params.require(:header).permit(:name, :content)
     end
 
 

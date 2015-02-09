@@ -1,0 +1,9 @@
+- @page_title = "Delete News Article"
+= link_to("<< Back to List", {:action => 'index',}, :class => 'back-link')
+.news.delete
+  %h2 Delete News Article
+  = form_for(:product, :method => :delete, :url => {:action => 'destroy', :id => @newsitem.id}) do |f|
+    %p Are you sure you want to permanently delete this news article?
+    %p.reference-name= @newsitem.short_entry
+    .form-buttons
+      = submit_tag("Delete Article")

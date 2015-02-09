@@ -1,0 +1,19 @@
+%table{:summary => "Event entry form fields"}
+	%tr
+		%th= f.label(:short_entry, "event spotlight")
+		%td= f.text_area :short_entry, :class => "tinymce", :rows => 10, :cols => 150
+	%tr
+		%th= f.label(:long_entry, "full event")
+		%td= f.text_area :long_entry, :class => "tinymce", :rows => 20, :cols => 150
+	%tr
+		%th= f.label(:event_date, "event date")
+		%td= f.text_field(:event_date)
+	%tr
+		%th= f.label(:permalink, "link")
+		%td= f.text_field(:permalink)
+	%tr
+		%th= f.label(:position)
+		%td= f.select(:position, 1..@eventitem_count)
+	%tr
+		%th= f.label(:created_at, "publication date")
+		%td= f.datetime_select(:created_at)

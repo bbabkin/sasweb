@@ -1,0 +1,25 @@
+%table{:summary => "Mine Data Name"}
+	%tr
+		%th= f.label :mine_name, "Mine Name"
+		%td= f.text_field :mine_name
+%table{:summary => "Mine Data form fields"}
+	%tr
+		%th= f.label :mine_name, "Mine Name"
+		/ %th proven tonnes
+		/ %th proven grade
+		/ %th proven ounces
+		/ %th probable tonnes
+		/ %th probable grade
+		/ %th probable ounces
+		/ %th proven/probable tonnes
+		/ %th proven/probable grade
+		/ %th proven/probable ounces
+	%tr
+		%td= f.text_field :mine_data, as: :array
+
+	%tr
+		%th= f.label(:data_type, "Data Type")
+		%td= f.select :data_type, 
+		options_for_select([['Reserves','1'],['Resources','2']], params[:section]),
+		{}, { :class => 'span3 controls controls-row' }
+	%h2 Table Preview

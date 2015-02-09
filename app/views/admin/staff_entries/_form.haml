@@ -1,0 +1,45 @@
+%table{:summary => "team member entry form fields"}
+	%tr
+		%th= f.label(:name, "name")
+		%td= f.text_field :name
+	%tr
+		%th= f.label(:title, "position")
+		%td= f.text_field :title
+	%tr
+		%th= f.label(:summary, "team member summary")
+		%td= f.text_area :summary
+	%tr
+		%th= f.label :section, "is part of:"
+		%td= f.select :section, 
+		options_for_select([['Directors','1'],['Managers','2']], params[:section]),
+		{}, { :class => 'span3 controls controls-row' } 
+	
+
+	%tr
+		%th= f.label :is_board_member, "is a board member"
+		%td= f.check_box :is_board_member
+	%tr
+		%th= f.label(:committee1, "appointed by committee (1)")
+		%td= f.text_field(:committee1)
+	%tr
+		%th= f.label(:committee2, "appointed by committee (2)")
+		%td= f.text_field(:committee2)
+	%tr
+		%th= f.label(:committee3, "appointed by committee (3)")
+		%td= f.text_field(:committee3)
+	%tr
+		%th= f.label(:committee4, "appointed by committee (4)")
+		%td= f.text_field(:committee4)
+	%tr
+		%th= f.label(:photo1, "photo 1")
+		%td= f.file_field(:photo1)
+	%tr
+		%th= f.label(:photo2, "photo 2")
+		%td= f.file_field(:photo2)
+	%tr
+		%th= f.label(:permalink, "link")
+		%td= f.text_field :permalink
+	%tr
+		%th= f.label(:position, "position in the list")
+		%td= f.select(:position, 1..@staffentry_count)
+		

@@ -1,4 +1,4 @@
-class Admin::ProductsController < ApplicationController
+class Admin::FileEntriesController < ApplicationController
 
   layout "admin"
   
@@ -6,7 +6,7 @@ class Admin::ProductsController < ApplicationController
   before_action :confirm_logged_in
 
   def index
-    @fileentrys = FileEntry.sorted
+    @fileentries = FileEntry.newest_first
 
   end
 
@@ -21,7 +21,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def create
-    @fileentry = FileEntry.new(fileentry_params)
+    @fileentry = FileEntry.new(file_entry_params)
       if @fileentry.save
       flash[:notice] = "File created successfully."
       redirect_to(:action => 'index')
@@ -38,7 +38,7 @@ class Admin::ProductsController < ApplicationController
 
   def update
     @fileentry = FileEntry.find(params[:id])
-    if @fileentry.update_attributes(fileentry_params)
+    if @fileentry.update_attributes(file_entry_params)
       flash[:notice] = "File updated successfully."
       # redirect_to(:action => 'show', :id => @product.id, :line_id => @line.id)
       redirect_to(:action => 'index')
@@ -62,9 +62,9 @@ class Admin::ProductsController < ApplicationController
 
   private
 
-    def product_params
+    def file_entry_params
       params.require(:file_entry).permit(
-        :name, :description, :type, :link
+        :name, :description, :file_type, :file, :permalink
         )
     end
 

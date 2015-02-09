@@ -4,7 +4,7 @@ class CreateFileEntries < ActiveRecord::Migration
 		t.string "name", :limit => 275
 		t.text "description", :limit => 5000
 		t.integer "type"
-		t.string "link"
+		t.string "permalink", :limit => 175
       t.timestamps null: false
     end
   end

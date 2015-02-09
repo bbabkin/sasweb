@@ -1,0 +1,9 @@
+- @page_title = "Remove team member"
+= link_to("<< Back to List", {:action => 'index',}, :class => 'back-link')
+.news.delete
+  %h2 Remove team member entry
+  = form_for(:staff_entry, :method => :delete, :url => {:action => 'destroy', :id => @staffentry.id}) do |f|
+    %p Are you sure you want to permanently remove this team member entry?
+    %p.reference-name= @staffentry.name
+    .form-buttons
+      = submit_tag("Delete Entry")
