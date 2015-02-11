@@ -1,0 +1,10 @@
+- @page_title = "Update Header"
+= link_to("<< Back to Header List", {:action => 'index', :class => 'back-link'})
+.news.new
+  %h2 Update Header
+  = form_for [:admin, @header], :html => {:multipart => true} do |h|
+  
+  = form_for [:admin, @shares], :html => {:multipart => true} do |f|
+    = render(:partial => "form", :locals => {:f => f})
+    .form-buttons
+      = submit_tag("update header")

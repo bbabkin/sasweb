@@ -1,54 +1,67 @@
 source 'https://rubygems.org'
+    
+      	##############
+	 ## ####### ####### ## 
+	## ######## ######### ##
+	#  Standard Rails Gems #
+	### ####### ######## ###
+  	### ##### ##### ##
+      	## ## ## ##
+        	 ## ##
+           	 #
 
-
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
-# Use sqlite3 as the database for Active Record
 gem 'pg'
 gem "acts_as_list", "~> 0.3.0"
 gem "font-awesome-rails"
-# Use SCSS for stylesheets
+gem 'tzinfo-data'#, platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-# gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
-# gem 'coffee-rails', '~> 4.1.0'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
-# Use jquery as the JavaScript library
-
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-#gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'carrierwave'
-gem 'carrierwave-video'
-gem 'carrierwave-video-thumbnailer'
-gem 'rmagick', require: false 
-
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass'
 gem 'haml'
 gem 'autoprefixer-rails'
+# For error notifications
+gem "hoptoad_notifier"
+
+
+####################
+# Uploader Related #
+####################
+
+gem 'carrierwave'
+gem 'carrierwave-video'
+gem 'carrierwave-video-thumbnailer'
+gem 'rmagick', require: false 
 gem "fog"
-gem 'aws-sdk'
+gem 'aws-s3', :require => 'aws/s3'
+
+######################
+# Functionality Gems #
+######################
+
 gem 'tinymce-rails'
-# gem 'unf'
 gem 'gmaps4rails'
 gem 'simple_form'
 gem "highstocks-rails"
 gem 'yahoo-finance'
-# gem 'i18n'
-# gem 'redis'
 
-group :production do
-  gem 'rails_12factor'
-end
+#######
+# CMS #
+#######
+ 
+gem 'refinerycms', '~> 0.9.8.9'
+# (optional) For commenting, even though I haven't turned this one on
+gem 'refinerycms-inquiries', '~> 0.9' 
+# (optional) For search, ehh it's decent
+gem 'refinerycms-search', '~> 0.9.8'
+
+
+
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -68,4 +81,4 @@ end
 # end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data'#, platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+

@@ -27,8 +27,8 @@ layout 'public'
   end
   def information 
   end
-  #==OPERATIONS=========
-  def operations 
+  #==Mines and Projects=========
+  def mines 
   end
   def timmins
   end
@@ -71,16 +71,10 @@ layout 'public'
   end
   def links
   end
-  def sas_tv
-  end
   #====Contact=======
   def contact_info
   end
-  def request_info
-  end
   def send_message
-  end
-  def feedback
   end
 
 end

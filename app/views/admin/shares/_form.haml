@@ -1,0 +1,10 @@
+%table{:summary => "Header form fields"}
+	%tr
+		%th= f.label(:type, "share type")
+		%td= f.text_field :type
+	%tr
+		%th= f.label(:amount, "amount (in whole numbers)")
+		%td= f.text_field :amount
+	%tr
+		%th= f.label(:amount_text, "amount (display text)")
+		%td= f.text_field :amount

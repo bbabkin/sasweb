@@ -6,7 +6,7 @@ class Admin::HeadersController < ApplicationController
   before_action :confirm_logged_in
 
   def index
-    @headers = Header.sorted
+    @headers = Header.all
 
   end
 

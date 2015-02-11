@@ -7,6 +7,7 @@ class Admin::MineralDataController < ApplicationController
 
   def index
     @mineraldata = MineralDatum.newest_first
+    @headers = Header.all
 
   end
 
@@ -34,6 +35,8 @@ class Admin::MineralDataController < ApplicationController
   def edit
     @mineraldatum = MineralDatum.find(params[:id])
     @mineraldatum_count = MineralDatum.count
+    @header = Header.find(params[:id])
+    @header_count = Header.count
   end
 
   def update
@@ -46,6 +49,18 @@ class Admin::MineralDataController < ApplicationController
       @mineraldatum_count = MineralDatum.count
       render('edit')
     end
+
+    @header = Header.find(params[:id])
+    if @header.update_attributes(header_params)
+      flash[:notice] = "Header text updated successfully."
+      # redirect_to(:action => 'show', :id => @product.id, :line_id => @line.id)
+      redirect_to(:action => 'index')
+    else
+      @header_count = Header.count
+      render('edit')
+    end
+
+
   end
 
   def delete

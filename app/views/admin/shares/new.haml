@@ -1,0 +1,6 @@
+- @page_title = "New Header"
+= link_to("Back to Header List", {:action => 'index'}, :class => 'btn btn-primary')
+= form_for [:admin, @header], :html => {:multipart => true} do |f|
+	= render(:partial => "form", :locals => {:f => f})
+	.form-buttons
+		= submit_tag("Create New Header", :class => 'btn btn-primary')
