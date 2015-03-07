@@ -38,6 +38,8 @@ gem 'carrierwave-video-thumbnailer'
 gem 'rmagick', require: false 
 gem "fog"
 gem 'aws-s3', :require => 'aws/s3'
+gem 'aws-sdk', '< 2.0'
+
 
 ######################
 # Functionality Gems #

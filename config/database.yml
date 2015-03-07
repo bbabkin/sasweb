@@ -9,7 +9,7 @@ default: &default
   pool: 5
   timeout: 5000
   username: sasadmin 
-  password:	1234
+  password:	sasblue
 
 development:
   <<: *default
