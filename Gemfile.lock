@@ -253,6 +253,9 @@ GEM
       thread_safe (~> 0.1)
     tzinfo-data (1.2014.10)
       tzinfo (>= 1.0.0)
+    uglifier (2.7.1)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
     xml-simple (1.1.4)
     yahoo-finance (0.2.0)
 
@@ -288,4 +291,5 @@ DEPENDENCIES
   tinymce-rails
   turbolinks
   tzinfo-data
+  uglifier
   yahoo-finance
