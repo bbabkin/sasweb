@@ -19,7 +19,7 @@
 //= require underscore
 //= require tinymce-jquery
 //= require highstocks
-//= require theme
+//= require highstocks/themes/sand-signika
 //= require highstocks/modules/exporting
 //= require highstocks/modules/data
 //= require highstocks/modules/canvas-tools
