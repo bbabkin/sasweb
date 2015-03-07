@@ -26,7 +26,7 @@ gem 'haml'
 gem 'autoprefixer-rails'
 # For error notifications
 gem "hoptoad_notifier"
-
+gem 'rails_12factor', group: :production #For Heroku
 
 ####################
 # Uploader Related #
