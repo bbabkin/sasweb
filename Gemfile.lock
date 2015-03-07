@@ -42,11 +42,11 @@ GEM
     arel (6.0.0)
     autoprefixer-rails (4.0.2.1)
       execjs
-    aws-sdk (1.59.1)
-      aws-sdk-v1 (= 1.59.1)
-    aws-sdk-v1 (1.59.1)
-      json (~> 1.4)
-      nokogiri (>= 1.4.4)
+    aws-s3 (0.6.3)
+      builder
+      mime-types
+      xml-simple
+    bcrypt (3.1.9)
     bcrypt (3.1.9-x86-mingw32)
     bootstrap-sass (3.3.1.0)
       sass (~> 3.2)
@@ -149,6 +149,9 @@ GEM
     highstocks-rails (2.0.4)
       railties (>= 3.1)
     hike (1.2.3)
+    hoptoad_notifier (2.4.11)
+      activesupport
+      builder
     i18n (0.7.0)
     inflecto (0.0.2)
     ipaddress (0.8.0)
@@ -174,8 +177,11 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
+    nokogiri (1.6.5)
+      mini_portile (~> 0.6.0)
     nokogiri (1.6.5-x86-mingw32)
       mini_portile (~> 0.6.0)
+    pg (0.17.1)
     pg (0.17.1-x86-mingw32)
     rack (1.6.0)
     rack-test (0.6.2)
@@ -199,11 +205,6 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.1)
       loofah (~> 2.0)
-    rails_12factor (0.0.2)
-      rails_serve_static_assets
-      rails_stdout_logging
-    rails_serve_static_assets (0.0.1)
-    rails_stdout_logging (0.0.2)
     railties (4.2.0)
       actionpack (= 4.2.0)
       activesupport (= 4.2.0)
@@ -242,16 +243,18 @@ GEM
       thread_safe (~> 0.1)
     tzinfo-data (1.2014.10)
       tzinfo (>= 1.0.0)
+    xml-simple (1.1.4)
     yahoo-finance (0.2.0)
 
 PLATFORMS
+  ruby
   x86-mingw32
 
 DEPENDENCIES
-  acts_as_list (~> 0.3.0)
+  acts_as_list
   autoprefixer-rails
-  aws-sdk
-  bcrypt (~> 3.1.7)
+  aws-s3
+  bcrypt
   bootstrap-sass
   carrierwave
   carrierwave-video
@@ -261,14 +264,14 @@ DEPENDENCIES
   gmaps4rails
   haml
   highstocks-rails
-  jbuilder (~> 2.0)
+  hoptoad_notifier
+  jbuilder
   jquery-rails
   jquery-turbolinks
   pg
-  rails (= 4.2.0)
-  rails_12factor
+  rails
   rmagick
-  sass-rails (~> 5.0)
+  sass-rails
   simple_form
   tinymce-rails
   turbolinks

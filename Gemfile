@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
     
-      	##############
+      ###############
 	 ## ####### ####### ## 
 	## ######## ######### ##
 	#  Standard Rails Gems #
@@ -10,17 +10,17 @@ source 'https://rubygems.org'
         	 ## ##
            	 #
 
-gem 'rails', '4.2.0'
+gem 'rails'#, '4.2.0'
 gem 'pg'
-gem "acts_as_list", "~> 0.3.0"
+gem "acts_as_list"#, "~> 0.3.0"
 gem "font-awesome-rails"
 gem 'tzinfo-data'#, platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails'#, '~> 5.0'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
 gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
-gem 'bcrypt', '~> 3.1.7'
+gem 'jbuilder'#, '~> 2.0'
+gem 'bcrypt'#, '~> 3.1.7'
 gem 'bootstrap-sass'
 gem 'haml'
 gem 'autoprefixer-rails'
@@ -53,11 +53,7 @@ gem 'yahoo-finance'
 # CMS #
 #######
  
-gem 'refinerycms', '~> 0.9.8.9'
-# (optional) For commenting, even though I haven't turned this one on
-gem 'refinerycms-inquiries', '~> 0.9' 
-# (optional) For search, ehh it's decent
-gem 'refinerycms-search', '~> 0.9.8'
+
 
 
 
