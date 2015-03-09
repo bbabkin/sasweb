@@ -12,12 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.turbolinks
+//= require tinymce-jquery
 //= require scripts
-//= require turbolinks
 //= require bootstrap-sprockets
 //= require underscore
-//= require tinymce-jquery
 //= require highstocks
 //= require highstocks/themes/sand-signika
 //= require highstocks/modules/exporting
