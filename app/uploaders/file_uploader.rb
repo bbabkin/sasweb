@@ -15,17 +15,13 @@ class FileUploader < CarrierWave::Uploader::Base
   #storage :file
   storage :fog
 
-  CarrierWave.configure do |config|
-    config.cache_dir = "#{Rails.root}/tmp/uploads"
-  end
-   
      def cache_dir
         "#{Rails.root}/public/uploads"
      end
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "public/uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
   def extension_white_list
