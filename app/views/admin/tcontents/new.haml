@@ -1,0 +1,6 @@
+- @page_title = "New Text Content"
+= link_to("Back to Text Content List", {:action => 'index'}, :class => 'btn btn-primary')
+= form_for [:admin, @tcontent], :html => {:multipart => true} do |f|
+	= render(:partial => "form", :locals => {:f => f})
+	.form-buttons
+		= submit_tag("Create New Text Content", :class => 'btn btn-primary')

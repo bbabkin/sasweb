@@ -1,0 +1,8 @@
+- @page_title = "Delete Carousel Image"
+= link_to("<< Back to List", {:action => 'index',}, :class => 'back-link')
+.content.delete
+  %h2 Delete Carousel Image
+  = form_for(:carousel_image, :method => :delete, :url => {:action => 'destroy', :id => @carouselimage.id}) do |f|
+    %p.reference-name= @carouselimage.name
+    .form-buttons
+      = submit_tag("Delete Carousel Image)

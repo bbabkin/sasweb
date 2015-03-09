@@ -1,0 +1,8 @@
+%table{:summary => "Text Content form fields"}
+	%tr
+		%th= f.label(:stringid, "Text string id")
+		%td= f.text_field :stringid
+	%tr
+		%th= f.label(:data, "Text Content")
+		%td= f.text_area :data, :class => "tinymce", :rows => 20, :cols => 150
+

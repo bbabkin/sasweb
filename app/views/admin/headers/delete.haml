@@ -2,7 +2,7 @@
 = link_to("<< Back to List", {:action => 'index',}, :class => 'back-link')
 .news.delete
   %h2 Delete Header
-  = form_for(:product, :method => :delete, :url => {:action => 'destroy', :id => @header.id}) do |f|
+  = form_for(:header, :method => :delete, :url => {:action => 'destroy', :id => @header.id}) do |f|
     %p Deleting headers may cause the website to cease functioning, continue?
     %p.reference-name= @header.name
     .form-buttons

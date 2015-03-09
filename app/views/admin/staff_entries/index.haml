@@ -18,7 +18,10 @@
       %td= staffentry.name
       %td= staffentry.title
       %td= image_tag staffentry.photo1.thumb.url
-      %td= staffentry.section
+      -if staffentry.section = 1
+          %td Director
+        -else
+          %td Manager
       %td.actions
         = link_to("Show", admin_staff_entry_path(staffentry), class: "btn btn-primary")
         = link_to("Edit", edit_admin_staff_entry_path(staffentry), class: "btn btn-primary")

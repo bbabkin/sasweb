@@ -1,0 +1,8 @@
+- @page_title = "Update Carousel Image"
+= link_to("<< Back to Carousel Images List", {:action => 'index', :class => 'back-link'})
+.news.new
+  %h2 Update Carousel Images
+  = form_for [:admin, @carouselimages], :html => {:multipart => true} do |f|
+    = render(:partial => "form", :locals => {:f => f})
+    .form-buttons
+      = submit_tag("update carousel image content")

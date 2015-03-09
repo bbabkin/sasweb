@@ -1,0 +1,23 @@
+- @page_title = "Text contents"
+= link_to("Back to admin menu", admin_path, :class => 'btn btn-primary')
+%br
+%br
+.news.index
+  = link_to("Add new tcontent (not recommended)", {:action => 'new'}, :class => 'btn btn-success') 
+  
+  %table.admintable{:summary => "Text contents"}
+    %tr.tcontent
+      %th ID;
+      %th Location
+      %th Content
+      %th Actions
+    - @tcontents.each do |tcontent|
+      %tr{:class => cycle('odd', 'even')}
+        %td= tcontent.id
+        %td= tcontent.stringid
+        %td= tcontent.data.html_safe
+        %td.actions
+          = link_to("Edit", edit_admin_tcontent_path(tcontent), class: "btn btn-primary")
+          = link_to("Delete", delete_admin_tcontent_path(tcontent), class: "btn btn-danger")
+
+

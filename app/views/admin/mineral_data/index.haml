@@ -24,7 +24,10 @@
 			%tr{:class => cycle('odd', 'even')}
 				%td= mineraldata.id
 				%td= mineraldata.mine_name
-				%td= mineraldata.data_type
+				-if mineraldata.data_type = 1
+					%td Reserves
+				-else
+					%td Resources
 				%td-if mineraldata.mine_data
 				- mineraldata.mine_data.each do |dataentry|
 					%td= dataentry

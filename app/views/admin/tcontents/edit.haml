@@ -1,0 +1,8 @@
+- @page_title = "Update Text content"
+= link_to("<< Back to Text content List", {:action => 'index', :class => 'back-link'})
+.news.new
+  %h2 Update Text content
+  = form_for [:admin, @tcontent], :html => {:multipart => true} do |f|
+    = render(:partial => "form", :locals => {:f => f})
+    .form-buttons
+      = submit_tag("update text content")

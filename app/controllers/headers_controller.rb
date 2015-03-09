@@ -5,12 +5,12 @@ layout 'public'
 
   def index
     #@products = Product.where(:line_id => @line.id).sorted
-    @headers = Header.sorted
+    @headers = Header.all
   end
 
   def show
     @header = Header.find(params[:id])
-    @headers = Header.sorted
+    @headers = Header.all
   end
 
 end

@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   get "public/disclamer"
 
   #==CORPORATE=========
-  get "public/corporate" 
   get "public/profile"
   get "public/directors" 
   get "public/management" 
@@ -26,7 +25,7 @@ Rails.application.routes.draw do
   get "public/hislop_mine" 
   get "public/holt_mill" 
   get "public/exploration" 
-  get "public/adv_projects"
+  get "public/taylor_project"
   get "public/regional_exp" 
   get "public/reserves_resources"
   get "public/tech_reports"
@@ -38,15 +37,14 @@ Rails.application.routes.draw do
   get "public/events"
   get "public/presentations"
   get "public/annual_reports"
-  get "public/services"
+  get "public/share_services"
+  get "public/reg_filings"
+  get "public/analyst_coverage"
   get "public/links"
-  get "public/sas_tv"
 
   #====CONTACT=======
-  get "public/contact_info"
-  get "public/request_info"
-  get "public/send_message"
-  get "public/feedback"
+  get "public/contact"
+
 
 
   
@@ -61,6 +59,10 @@ Rails.application.routes.draw do
   resources :mineral_data do
   end
   resources :headers do
+  end
+  resources :tcontents do
+  end
+  resources :carousel_images do
   end
 
   
@@ -103,5 +105,15 @@ Rails.application.routes.draw do
         get :delete
       end
     end  
+    resources :tcontents do
+      member do
+        get :delete
+      end
+    end 
+    resources :carousel_images do
+      member do
+        get :delete
+      end
+    end   
   end
 end

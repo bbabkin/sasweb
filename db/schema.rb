@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150209043041) do
+ActiveRecord::Schema.define(version: 20150309062853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,13 @@ ActiveRecord::Schema.define(version: 20150209043041) do
   end
 
   add_index "admin_users", ["username"], name: "index_admin_users_on_username", using: :btree
+
+  create_table "carousel_images", force: :cascade do |t|
+    t.integer "position"
+    t.string  "image"
+    t.string  "title"
+    t.string  "description"
+  end
 
   create_table "event_items", force: :cascade do |t|
     t.text     "short_entry"
@@ -96,5 +103,12 @@ ActiveRecord::Schema.define(version: 20150209043041) do
     t.datetime "updated_at",                                  null: false
     t.string   "title"
   end
+
+  create_table "tcontents", force: :cascade do |t|
+    t.integer "stringid"
+    t.text    "data"
+  end
+
+  add_index "tcontents", ["stringid"], name: "index_tcontents_on_stringid", using: :btree
 
 end

@@ -1,0 +1,9 @@
+- @page_title = "Delete Text Content"
+= link_to("<< Back to List", {:action => 'index',}, :class => 'back-link')
+.content.delete
+  %h2 Delete Text Content
+  = form_for(:tcontent, :method => :delete, :url => {:action => 'destroy', :id => @tcontent.id}) do |f|
+    %p Deleting Text Content may cause the website to cease functioning, continue?
+    %p.reference-name= @tcontent.name
+    .form-buttons
+      = submit_tag("Delete Text Content")

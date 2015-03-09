@@ -1,17 +1,20 @@
 class PublicController < ApplicationController
 layout 'public'
- 
+ #===Common Models========
+
+
  #==GENERAL=========
   def index
+    @tcontent = Tcontent.find_by stringid: 1
   end
   def disclamer
   end
   def news
+    @newsitems = NewsItems.all
   end
   def careers
   end
-  #==CORPORATE=========
-  def corporate 
+  def contact_info
   end
   def profile 
   end
@@ -19,6 +22,7 @@ layout 'public'
   end
   def management 
   end
+  #==CORPORATE=========
   def corp_responsibility
   end
   def governance 
@@ -46,7 +50,7 @@ layout 'public'
   end
   def exploration 
   end
-  def adv_projects 
+  def taylor_project 
   end
   def regional_exp 
   end
@@ -65,16 +69,17 @@ layout 'public'
   end
   def presentations
   end
+  def analyst_coverage
+  end
   def annual_reports
   end
-  def services
+  def share_services
+  end
+  def reg_filings
   end
   def links
   end
-  #====Contact=======
-  def contact_info
-  end
-  def send_message
-  end
+
+
 
 end

@@ -1,0 +1,27 @@
+- @page_title = "Carousel image contents"
+= link_to("Back to admin menu", admin_path, :class => 'btn btn-primary')
+%br
+%br
+.news.index
+  = link_to("Add new carousel image", {:action => 'new'}, :class => 'btn btn-success') 
+  
+  %table.admintable{:summary => "carousel image contents"}
+    %tr
+      %th ID;
+      %th Position
+      %th Image
+      %th Title
+      %th Description
+      %th Actions
+    - @carouselimages.each do |carouselimage|
+      %tr{:class => cycle('odd', 'even')}
+        %td= carouselimage.id
+        %td= carouselimage.position
+        %td= image_tag carouselimage.image.thumb.url
+        %td= carouselimage.title
+        %td= carouselimage.description
+        %td.actions
+          = link_to("Edit", edit_admin_carouselimage_path(carouselimage), class: "btn btn-primary")
+          = link_to("Delete", delete_admin_carouselimage_path(carouselimage), class: "btn btn-danger")
+
+
