@@ -6,6 +6,7 @@ layout 'public'
  #==GENERAL=========
   def index
     @tcontent = Tcontent.find_by stringid: 1
+    @carouselimages = CarouselImage.sorted
   end
   def disclamer
   end

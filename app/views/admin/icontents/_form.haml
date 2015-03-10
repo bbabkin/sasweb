@@ -1,0 +1,7 @@
+%table{:summary => "Image Content form fields"}
+	%tr
+		%th= f.label(:image, "Image Content")
+		%td= f.file_field :image
+	%tr
+		%th= f.label(:description, "Image Description")
+		%td= f.text_field :description

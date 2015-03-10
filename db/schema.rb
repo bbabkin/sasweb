@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150309062853) do
+ActiveRecord::Schema.define(version: 20150309224258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,14 @@ ActiveRecord::Schema.define(version: 20150309062853) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  create_table "icontents", force: :cascade do |t|
+    t.integer "iid"
+    t.string  "image"
+    t.string  "description"
+  end
+
+  add_index "icontents", ["iid"], name: "index_icontents_on_iid", using: :btree
 
   create_table "mineral_data", force: :cascade do |t|
     t.string   "mine_name",  limit: 175

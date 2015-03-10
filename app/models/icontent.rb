@@ -1,8 +1,8 @@
-class CarouselImage < ActiveRecord::Base
-
+class Icontent < ActiveRecord::Base
+  mount_uploader :image, ImageUploader # Tells rails to use this uploader for this model.
   #mount_uploader :image, ImageUploader # Tells rails to use this uploader for this model.
   validates_presence_of :image
-  mount_uploader :image, ImageUploader # Tells rails to use this uploader for this model.
+
   #validates_length_of :name, :maximum => 255
   # use presence_of with length_of to disallow spaces
 
@@ -11,8 +11,7 @@ class CarouselImage < ActiveRecord::Base
 
   # scope :visible, lambda { where(:visible => true) }
   # scope :invisible, lambda { where(:visible => false) }
-  scope :sorted, lambda { order("position ASC") }
-  scope :newest_first, lambda { order("carousel_images.created_at DESC")}
+  scope :newest_first, lambda { order("icontents.created_at DESC")}
   scope :search, lambda {|query|
     where(["name LIKE ?", "%#{query}%"])
   }

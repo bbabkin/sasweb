@@ -1,0 +1,8 @@
+- @page_title = "Delete Image Content"
+= link_to("<< Back to Image List", {:action => 'index',}, :class => 'back-link')
+.content.delete
+  %h2 Delete Image Content
+  = form_for(:icontent, :method => :delete, :url => {:action => 'destroy', :id => @icontent.id}) do |f|
+    %p.reference-name= @icontent.desription
+    .form-buttons
+      = submit_tag("Delete Image Content")

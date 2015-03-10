@@ -1,1 +1,17 @@
+#maincarousel.carousel.slide
+	/ Indicators
+	%ol.carousel-indicators.hidden-xs
+		%li.active{"data-slide-to" => "0", "data-target" => "#maincarousel"}
+		%li{"data-slide-to" => "1", "data-target" => "#maincarousel"}
+		%li{"data-slide-to" => "2", "data-target" => "#maincarousel"}
+	/ Wrapper for slides
+	.carousel-inner
+		- @carouselimages.each do |carouselimage|
+			.item
+				=image_tag carouselimage.image.url
+	/ Controls
+	%a.left.carousel-control{"data-slide" => "prev", :href => "#maincarousel"}
+		%span.icon-prev
+	%a.right.carousel-control{"data-slide" => "next", :href => "#maincarousel"}
+		%span.icon-next
 %p= @tcontent.data.html_safe

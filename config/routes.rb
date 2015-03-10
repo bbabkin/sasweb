@@ -62,6 +62,8 @@ Rails.application.routes.draw do
   end
   resources :tcontents do
   end
+  resources :icontents do
+  end
   resources :carousel_images do
   end
 
@@ -106,6 +108,11 @@ Rails.application.routes.draw do
       end
     end  
     resources :tcontents do
+      member do
+        get :delete
+      end
+    end 
+    resources :icontents do
       member do
         get :delete
       end

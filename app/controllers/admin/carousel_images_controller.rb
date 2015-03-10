@@ -6,7 +6,7 @@ class Admin::CarouselImagesController < ApplicationController
   before_action :confirm_logged_in
 
   def index
-    @carouselimages = CarouselImage.all
+    @carouselimages = CarouselImage.sorted
 
   end
 

@@ -1,0 +1,23 @@
+- @page_title = "Image contents"
+= link_to("Back to admin menu", admin_path, :class => 'btn btn-primary')
+%br
+%br
+.news.index
+  = link_to("Add new Image Content", {:action => 'new'}, :class => 'btn btn-success') 
+  
+  %table.admintable{:summary => "Text contents"}
+    %tr.icontent
+      %th ID;
+      %th Image
+      %th Description
+      %th Actions
+    - @icontents.each do |icontent|
+      %tr{:class => cycle('odd', 'even')}
+        %td= icontent.id
+        %td= image_tag icontent.image.thumb.url
+        %td= icontent.description
+        %td.actions
+          = link_to("Edit", edit_admin_icontent_path(icontent), class: "btn btn-primary")
+          = link_to("Delete", delete_admin_icontent_path(icontent), class: "btn btn-danger")
+
+
