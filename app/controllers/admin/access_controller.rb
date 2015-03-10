@@ -9,7 +9,7 @@ class Admin::AccessController < ApplicationController
   end
 
   def login
-    # login form
+    render :layout => "adminaccess"
   end
 
   def attempt_login

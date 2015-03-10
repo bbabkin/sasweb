@@ -51,5 +51,12 @@ class Admin::AdminUsersController < ApplicationController
   def admin_user_params
     params.require(:admin_user).permit(:username, :password)
   end
-
+  
+  def logout
+    # mark user as logged out
+    session[:user_id] = nil
+    session[:username] = nil
+    flash[:notice] = "Logged out"
+    redirect_to(:action => "login")
+  end
 end

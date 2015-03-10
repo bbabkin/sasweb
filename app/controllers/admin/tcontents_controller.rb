@@ -54,7 +54,13 @@ class Admin::TcontentsController < ApplicationController
     flash[:notice] = "Content text removed successfully."
     redirect_to(:action => 'index')
   end
-
+  def logout
+    # mark user as logged out
+    session[:user_id] = nil
+    session[:username] = nil
+    flash[:notice] = "Logged out"
+    redirect_to(:action => "login")
+  end
 
   private
 

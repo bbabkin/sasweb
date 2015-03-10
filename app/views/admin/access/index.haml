@@ -1,17 +1,4 @@
 - @page_title = "Admin Menu"
-.menu
-  %h2 SAS Gold Control Panel
-  .identity
-    Logged in as: #{session[:username]}
-  %ul
-    %li= link_to("Admin Users", admin_admin_users_path, class: 'btn btn-primary')
-    %li= link_to("News", admin_news_items_path, class: 'btn btn-primary')
-    %li= link_to("Events", admin_event_items_path, class: 'btn btn-primary')
-    %li= link_to("Directors and Management", admin_staff_entries_path, class: 'btn btn-primary')
-    %li= link_to("Reports, Photos, Maps, Presentations", admin_file_entries_path, class: 'btn btn-primary')
-    %li= link_to("Reserves and Resources", admin_mineral_data_path, class: 'btn btn-primary')
-    %li= link_to("Headers", admin_headers_path, class: 'btn btn-primary')
-    %li= link_to("Images for Contents", admin_icontents_path, class: 'btn btn-primary')
-    %li= link_to("Text Contents", admin_tcontents_path, class: 'btn btn-primary')
-    %li= link_to("Home Page Carousel", admin_carousel_images_path, class: 'btn btn-primary')
-    %li= link_to("Logout", :action => 'logout', class: 'btn btn-primary')
+%p Welcome To St. Andrew Administration Section
+%p Logged in as: #{session[:username]}
+.btn.btn-default= link_to("Logout", :action => 'logout')

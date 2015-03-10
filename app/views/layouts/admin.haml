@@ -3,7 +3,7 @@
   %head
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %meta{:content => "St. Andrew Goldoldfields Ltd.", :name => "description"}/
-    %meta{:content => "vis.works", :name => "author"}/
+    %meta{:content => "Penda Productions inc", :name => "author"}/
     %title
       St. Andrew Goldfields | #{@page_title || "Admin"}
     %link{:href => "https://fonts.googleapis.com/css?family=Droid+Sans", :rel => "stylesheet"}/
@@ -12,13 +12,18 @@
     = tinymce
 
   %body
-    #header
-      %h3 Admin Control Panel
-    #main
+    #wrapper
       - if !flash[:notice].blank?
         .notice
           = flash[:notice]
-      #content
+      #sidebar-wrapper
+        = render :partial => 'layouts/adminnav'
+      #page-content-wrapper
+        %a#menu-toggle.btn.btn-default{:href => "#menu-toggle"} Hide/Show Menu
+        %hr
         = yield
-    #footer
-      %p#copyright &#169; sasgoldmines.com
+:javascript
+  $("#menu-toggle").click(function(e) {
+  e.preventDefault();
+  $("#wrapper").toggleClass("toggled");
+  });

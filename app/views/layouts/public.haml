@@ -22,5 +22,12 @@
           %hr.greyhr.nopad
           = yield
         .clear
-        .footer
-  
+    %footer.footer
+      .container
+        %ul.footerlist
+          %li=link_to "Disclaimer", controller: "public", action: "disclaimer"
+          %li=link_to "Privacy Policy", controller: "public", action: "privacy_policy"
+          %li © 2015 St.Andrew Goldfields Ltd.
+          %li.form-group.form-inline.form-group-sm.footerform
+            %label{:for => "InputEmail1"} Subscribe
+            %input#InputEmail1.form-control-sm{:placeholder => "your@email.com", :type => "email"}/

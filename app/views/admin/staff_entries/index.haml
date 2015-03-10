@@ -1,30 +1,28 @@
 - @page_title = "Team Members"
-= link_to("Back to admin menu", admin_path, :class => 'btn btn-primary')
-%br
 %br
 = link_to("Add new team member", {:action => 'new'}, :class => 'btn btn-success') 
 
 %table.admintable{:summary => "Staff list"}
-  %tr.header
-    %th ID;
-    %th Name
-    %th Title
-    %th Photo
-    %th Section
-    %th Actions
-  - @staffentries.each do |staffentry|
-    %tr{:class => cycle('odd', 'even')}
-      %td= staffentry.id
-      %td= staffentry.name
-      %td= staffentry.title
-      %td= image_tag staffentry.photo1.thumb.url
-      -if staffentry.section = 1
-          %td Director
-        -else
-          %td Manager
-      %td.actions
-        = link_to("Show", admin_staff_entry_path(staffentry), class: "btn btn-primary")
-        = link_to("Edit", edit_admin_staff_entry_path(staffentry), class: "btn btn-primary")
-        = link_to("Delete", delete_admin_staff_entry_path(staffentry), class: "btn btn-danger")
+	%tr.header
+		%th ID;
+		%th Name
+		%th Title
+		%th Photo
+		%th Section
+		%th Actions
+	- @staffentries.each do |staffentry|
+		%tr{:class => cycle('odd', 'even')}
+			%td= staffentry.id
+			%td= staffentry.name
+			%td= staffentry.title
+			%td= image_tag staffentry.photo1.thumb.url
+			-if staffentry.section = 1
+				%td Director
+			-else
+				%td Manager
+			%td.actions
+				= link_to("Show", admin_staff_entry_path(staffentry), class: "btn btn-primary")
+				= link_to("Edit", edit_admin_staff_entry_path(staffentry), class: "btn btn-primary")
+				= link_to("Delete", delete_admin_staff_entry_path(staffentry), class: "btn btn-danger")
 
 

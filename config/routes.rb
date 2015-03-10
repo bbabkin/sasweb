@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   #match ':controller(/:action(/:id))', :via => [:get, :post]
   get "public/news" 
   get "public/careers"
-  get "public/disclamer"
+  get "public/disclaimer"
+  get "public/privacy_policy"
 
   #==CORPORATE=========
   get "public/profile"
