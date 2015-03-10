@@ -12,10 +12,10 @@
     = tinymce
 
   %body
+    - if !flash[:notice].blank?
+    .feedback
+      = flash[:notice]
     #wrapper
-      - if !flash[:notice].blank?
-        .notice
-          = flash[:notice]
       #sidebar-wrapper
         = render :partial => 'layouts/adminnav'
       #page-content-wrapper

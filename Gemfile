@@ -47,6 +47,7 @@ gem 'aws-sdk', '< 2.0'
 ######################
 
 gem 'tinymce-rails'
+gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
 gem 'gmaps4rails'
 gem 'simple_form'
 gem "highstocks-rails"

@@ -67,6 +67,8 @@ Rails.application.routes.draw do
   end
   resources :carousel_images do
   end
+  resources :subscribers do
+  end
 
   
   get 'admin', :to => "admin/access#index"
@@ -119,6 +121,11 @@ Rails.application.routes.draw do
       end
     end 
     resources :carousel_images do
+      member do
+        get :delete
+      end
+    end   
+    resources :subscribers do
       member do
         get :delete
       end
