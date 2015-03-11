@@ -2,11 +2,18 @@
 
 @import "general.scss";
 /*---======== MAIN =======---*/
-.publicbody { padding-top: 170px; }
+.publicbody { 
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        /* Negative indent footer by it's height */
+        margin: 0 auto -60px;
+	padding-top: 150px; }
 img { border: none; }
 
 /*------===========  NAVIGATION =========------------*/
 .nav{
+
 }
 
 
@@ -61,8 +68,6 @@ nav.shrink .navbar-toggle {
 	background-color: #ccc;
 	font-size: 0.8em;
 	text-align: center;
-display: inline !important; 
-  position: absolute;
   border-top-color: #000;
   border-top-width: 1px;
   border-top-style: solid;

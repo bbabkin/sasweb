@@ -65,7 +65,7 @@ class Admin::CarouselImagesController < ApplicationController
   private
 
     def carousel_image_params
-      params.require(:carousel_image).permit(:stringid, :data)
+      params.require(:carousel_image).permit(:image, :title, :description)
     end
 
 
