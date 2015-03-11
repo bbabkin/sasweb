@@ -7,8 +7,11 @@ class Admin::SubscribersController < ApplicationController
 
   def index
     @subscribers = Subscriber.all
-
+    respond_to do |format|
+      format.html
+      format.csv { render text: @subscribers.to_csv }
   end
+end
 
   def new
     @subscriber = Subscriber.new()
@@ -17,9 +20,9 @@ class Admin::SubscribersController < ApplicationController
   end
 
   def create
-    @subscriber = Subscriber.new(subscribers_params)
+    @subscriber = Subscriber.new(subscriber_params)
       if @subscriber.save
-      flash[:notice] = "Content text created successfully."
+      flash[:notice] = "Subscriber created successfully."
       redirect_to(:action => 'index')
     else
       @subscriber_count = Subscriber.count + 1
@@ -35,7 +38,7 @@ class Admin::SubscribersController < ApplicationController
   def update
     @subscriber = Subscriber.find(params[:id])
     if @subscriber.update_attributes(subscribers_params)
-      flash[:notice] = "Content text updated successfully."
+      flash[:notice] = "Subscriber updated successfully."
       # redirect_to(:action => 'show', :id => @product.id, :line_id => @line.id)
       redirect_to(:action => 'index')
     else
@@ -51,7 +54,7 @@ class Admin::SubscribersController < ApplicationController
   def destroy
     #v-maybe @ shouldn't be here
     @subscriber = Subscriber.find(params[:id]).destroy
-    flash[:notice] = "Content text removed successfully."
+    flash[:notice] = "Subscriber removed successfully."
     redirect_to(:action => 'index')
   end
   def logout

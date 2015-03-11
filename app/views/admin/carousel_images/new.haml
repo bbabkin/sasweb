@@ -1,6 +1,6 @@
 - @page_title = "New Carousel Image"
-= link_to("Back to Carousel Image List", {:action => 'index'}, :class => 'btn btn-primary')
+= link_to("Back to Carousel Image List", {:action => 'index'}, :class => 'btn btn-xs btn-default')
 = form_for [:admin, @carouselimage], :html => {:multipart => true} do |f|
 	= render(:partial => "form", :locals => {:f => f})
 	.form-buttons
-		= submit_tag("Create New Carousel Image", :class => 'btn btn-primary')
+		= submit_tag("Create New Carousel Image", :class => 'btn btn-xs btn-default')

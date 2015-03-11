@@ -1,9 +1,6 @@
-- @page_title = "Headers"
-= link_to("Back to admin menu", admin_path, :class => 'btn btn-primary')
-%br
-%br
+- @page_title = "Shares"
 .news.index
-  = link_to("Add new header (not recommended)", {:action => 'new'}, :class => 'btn btn-success') 
+  = link_to("Add new header (not recommended)", {:action => 'new'}, :class => 'btn btn-xs btn-success') 
   
   %table.admintable{:summary => "Headers"}
     %tr.header
@@ -17,7 +14,7 @@
         %td= header.name
         %td= header.content
         %td.actions
-          = link_to("Edit", edit_admin_header_path(header), class: "btn btn-primary")
-          = link_to("Delete", delete_admin_header_path(header), class: "btn btn-danger")
+          = link_to("Edit", edit_admin_header_path(header), class: "btn btn-xs btn-default")
+          = link_to("Delete", delete_admin_header_path(header), class: "btn btn-xs btn-danger")
 
 

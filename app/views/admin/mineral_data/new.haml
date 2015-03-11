@@ -1,6 +1,6 @@
 - @page_title = "New Mineral Data"
-= link_to("Back to Mineral Data List", {:action => 'index'}, :class => 'btn btn-primary')
+= link_to("Back to Mineral Data List", {:action => 'index'}, :class => 'btn btn-xs btn-default')
 = form_for [:admin, @mineraldatum], :html => {:multipart => true} do |f|
 	= render(:partial => "form", :locals => {:f => f})
 	.form-buttons
-		= submit_tag("Create News Article", :class => 'btn btn-primary')
+		= submit_tag("Create News Article", :class => 'btn btn-xs btn-default')

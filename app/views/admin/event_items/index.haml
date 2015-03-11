@@ -1,8 +1,8 @@
 - @page_title = "News"
-= link_to("Back to admin menu", admin_path, :class => 'btn btn-primary')
+= link_to("Back to admin menu", admin_path, :class => 'btn btn-xs btn-default')
 %br
 %br
-= link_to("Add new event", {:action => 'new'}, :class => 'btn btn-success') 
+= link_to("Add new event", {:action => 'new'}, :class => 'btn btn-xs btn-success') 
 
 %table.admintable{:summary => "Event list"}
   %tr.header
@@ -18,8 +18,8 @@
       %td= eventitem.short_entry.html_safe
       %td= eventitem.created_at
       %td.actions
-        = link_to("Show", admin_event_item_path(eventitem), class: "btn btn-primary")
-        = link_to("Edit", edit_admin_event_item_path(eventitem), class: "btn btn-primary")
-        = link_to("Delete", delete_admin_event_item_path(eventitem), class: "btn btn-danger")
+        = link_to("Show", admin_event_item_path(eventitem), class: "btn btn-xs btn-default")
+        = link_to("Edit", edit_admin_event_item_path(eventitem), class: "btn btn-xs btn-default")
+        = link_to("Delete", delete_admin_event_item_path(eventitem), class: "btn btn-xs btn-danger")
 
 

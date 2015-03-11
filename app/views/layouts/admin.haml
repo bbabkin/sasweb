@@ -6,24 +6,24 @@
     %meta{:content => "Penda Productions inc", :name => "author"}/
     %title
       St. Andrew Goldfields | #{@page_title || "Admin"}
-    %link{:href => "https://fonts.googleapis.com/css?family=Droid+Sans", :rel => "stylesheet"}/
+    %link{:href => "https://fonts.googleapis.com/css?family=Oswald:400,700,300", :rel => "stylesheet"}/
     = stylesheet_link_tag "application", media: 'all'
     = javascript_include_tag "application"
     = tinymce
 
   %body
     - if !flash[:notice].blank?
-    .feedback
-      = flash[:notice]
+      .notice
+        = flash[:notice]
     #wrapper
       #sidebar-wrapper
         = render :partial => 'layouts/adminnav'
       #page-content-wrapper
-        %a#menu-toggle.btn.btn-default{:href => "#menu-toggle"} Hide/Show Menu
+        %a#menu-toggle.btn.btn-xs.btn-xs.btn-default{:href => "#menu-toggle"} Hide/Show Menu
         %hr
         = yield
-:javascript
-  $("#menu-toggle").click(function(e) {
-  e.preventDefault();
-  $("#wrapper").toggleClass("toggled");
-  });
+    :javascript
+      $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+      });

@@ -1,66 +1,66 @@
-.navbar.navbar-sas{:role => "navigation"}
-	.navbar-header
-		%button.navbar-toggle.collapsed{"data-target" => "#collapse-1", "data-toggle" => "collapse", :type => "button"}			
-			%span.sr-only Toggle navigation
-			%span.icon-bar
-			%span.icon-bar
-			%span.icon-bar
-		.brand= link_to "St. Andrew Goldfields Ltd.", controller: "public", action: "index"
-	#collapse-1.collapse.navbar-collapse
-		%ul.nav.navbar-nav-sq.navbar-right.mainnav.pull-right
-			//////About Us////////
-			%li.dropdown.navbutton
-				%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "profile"}
-					About Us
-					%span.caret
-				%ul.dropdown-menu{:role => "menu"}
-					%li.lmenuitem.dropdown_listbutton= link_to "Profile", controller: "public", action: "profile"
-					%li.lmenuitem.dropdown_listbutton= link_to "Directors", controller: "public", action: "directors"
-					%li.lmenuitem.dropdown_listbutton= link_to "Management", controller: "public", action: "management"
-			///////CORPORATE////////
-			%li.dropdown.navbutton
-				%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "ps"}
-					Corporate
-					%span.caret
-				%ul.dropdown-menu{:role => "menu"}
-					%li.lmenuitem.dropdown_listbutton= link_to "Corporate Responsibility", controller: "public", action: "corp_responsibility"
-					%li.lmenuitem.dropdown_listbutton= link_to "Governance", controller: "public", action: "governance"
-					%li.lmenuitem.dropdown_listbutton= link_to "Whistleblower", controller: "public", action: "whistleblower"
-					%li.lmenuitem.dropdown_listbutton= link_to "Information", controller: "public", action: "information"
-			///////Mines and Projects////////
-			%li.dropdown.navbutton
-				%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "timmins"}
-					Mines and Projects
-					%span.caret
-				%ul.dropdown-menu{:role => "menu"}
-					%li.lmenuitem.dropdown_listbutton= link_to "Timmins", controller: "public", action: "timmins"
-					%li.lmenuitem.dropdown_listbutton= link_to "History", controller: "public", action: "history"
-					%li.lmenuitem.dropdown_listbutton= link_to "Regional Geology", controller: "public", action: "regional_geo"
-					%li.lmenuitem.dropdown_listbutton= link_to "Holt Mine", controller: "public", action: "holt_mine"
-					%li.lmenuitem.dropdown_listbutton= link_to "Holloway Mine", controller: "public", action: "holloway_mine"
-					%li.lmenuitem.dropdown_listbutton= link_to "Hislop Mine", controller: "public", action: "hislop_mine"
-					%li.lmenuitem.dropdown_listbutton= link_to "Holt Mill", controller: "public", action: "holt_mill"
-					%li.lmenuitem.dropdown_listbutton= link_to "Exploration", controller: "public", action: "exploration"
-					%li.lmenuitem.dropdown_listbutton= link_to "Taylor Project", controller: "public", action: "taylor_project"
-					%li.lmenuitem.dropdown_listbutton= link_to "Regional Exploration", controller: "public", action: "regional_exp"
-					%li.lmenuitem.dropdown_listbutton= link_to "Reserves / Resources", controller: "public", action: "reserves_resources"
-					%li.lmenuitem.dropdown_listbutton= link_to "Technical Reports", controller: "public", action: "tech_reports"
-					%li.lmenuitem.dropdown_listbutton= link_to "Gallery", controller: "public", action: "gallery"
-			///////Investors////////
-			%li.dropdown.navbutton
-				%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "invest_snapshot"}
-					Investors
-					%span.caret
-				%ul.dropdown-menu{:role => "menu"}
-					%li.lmenuitem.dropdown_listbutton= link_to "Investor Snapshot", controller: "public", action: "invest_snapshot"
-					%li.lmenuitem.dropdown_listbutton= link_to "Financial Database", controller: "public", action: "financial_database"
-					%li.lmenuitem.dropdown_listbutton= link_to "Events", controller: "public", action: "events"
-					%li.lmenuitem.dropdown_listbutton= link_to "Presentations", controller: "public", action: "presentations"
-					%li.lmenuitem.dropdown_listbutton= link_to "Annual and Interim Reports", controller: "public", action: "annual_reports"
-					%li.lmenuitem.dropdown_listbutton= link_to "Analyst Coverage", controller: "public", action: "analyst_coverage"
-					%li.lmenuitem.dropdown_listbutton= link_to "Regulatory Filings", controller: "public", action: "reg_filings"
-					%li.lmenuitem.dropdown_listbutton= link_to "Shareholder Services", controller: "public", action: "share_services"
-					%li.lmenuitem.dropdown_listbutton= link_to "Links", controller: "public", action: "links"
-			///////Contact////////
-			%li= link_to "Contact", controller: "public", action: "contact"
-					
+%nav.navbar.navbar-sas.navbar-fixed-top
+	.container
+		.navbar-header
+			%button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+				%span.icon-bar
+				%span.icon-bar
+				%span.icon-bar		
+			= link_to image_tag"logo.png", controller: "public", action: "index"
+		.collapse.navbar-collapse
+			%ul.nav.navbar-nav.pull-right
+				//////About Us////////
+				%li.dropdown.navbutton
+					%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "profile"}
+						About Us
+						%span.caret
+					%ul.dropdown-menu{:role => "menu"}
+						%li.lmenuitem.dropdown_listbutton= link_to "Profile", controller: "public", action: "profile"
+						%li.lmenuitem.dropdown_listbutton= link_to "Directors", controller: "public", action: "directors"
+						%li.lmenuitem.dropdown_listbutton= link_to "Management", controller: "public", action: "management"
+				///////CORPORATE////////
+				%li.dropdown.navbutton
+					%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "ps"}
+						Corporate
+						%span.caret
+					%ul.dropdown-menu{:role => "menu"}
+						%li.lmenuitem.dropdown_listbutton= link_to "Corporate Responsibility", controller: "public", action: "corp_responsibility"
+						%li.lmenuitem.dropdown_listbutton= link_to "Governance", controller: "public", action: "governance"
+						%li.lmenuitem.dropdown_listbutton= link_to "Whistleblower", controller: "public", action: "whistleblower"
+						%li.lmenuitem.dropdown_listbutton= link_to "Information", controller: "public", action: "information"
+				///////Mines and Projects////////
+				%li.dropdown.navbutton
+					%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "timmins"}
+						Mines and Projects
+						%span.caret
+					%ul.dropdown-menu{:role => "menu"}
+						%li.lmenuitem.dropdown_listbutton= link_to "Timmins", controller: "public", action: "timmins"
+						%li.lmenuitem.dropdown_listbutton= link_to "History", controller: "public", action: "history"
+						%li.lmenuitem.dropdown_listbutton= link_to "Regional Geology", controller: "public", action: "regional_geo"
+						%li.lmenuitem.dropdown_listbutton= link_to "Holt Mine", controller: "public", action: "holt_mine"
+						%li.lmenuitem.dropdown_listbutton= link_to "Holloway Mine", controller: "public", action: "holloway_mine"
+						%li.lmenuitem.dropdown_listbutton= link_to "Hislop Mine", controller: "public", action: "hislop_mine"
+						%li.lmenuitem.dropdown_listbutton= link_to "Holt Mill", controller: "public", action: "holt_mill"
+						%li.lmenuitem.dropdown_listbutton= link_to "Exploration", controller: "public", action: "exploration"
+						%li.lmenuitem.dropdown_listbutton= link_to "Taylor Project", controller: "public", action: "taylor_project"
+						%li.lmenuitem.dropdown_listbutton= link_to "Regional Exploration", controller: "public", action: "regional_exp"
+						%li.lmenuitem.dropdown_listbutton= link_to "Reserves / Resources", controller: "public", action: "reserves_resources"
+						%li.lmenuitem.dropdown_listbutton= link_to "Technical Reports", controller: "public", action: "tech_reports"
+						%li.lmenuitem.dropdown_listbutton= link_to "Gallery", controller: "public", action: "gallery"
+				///////Investors////////
+				%li.dropdown.navbutton
+					%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "invest_snapshot"}
+						Investors
+						%span.caret
+					%ul.dropdown-menu{:role => "menu"}
+						%li.lmenuitem.dropdown_listbutton= link_to "Investor Snapshot", controller: "public", action: "invest_snapshot"
+						%li.lmenuitem.dropdown_listbutton= link_to "Financial Database", controller: "public", action: "financial_database"
+						%li.lmenuitem.dropdown_listbutton= link_to "Events", controller: "public", action: "events"
+						%li.lmenuitem.dropdown_listbutton= link_to "Presentations", controller: "public", action: "presentations"
+						%li.lmenuitem.dropdown_listbutton= link_to "Annual and Interim Reports", controller: "public", action: "annual_reports"
+						%li.lmenuitem.dropdown_listbutton= link_to "Analyst Coverage", controller: "public", action: "analyst_coverage"
+						%li.lmenuitem.dropdown_listbutton= link_to "Regulatory Filings", controller: "public", action: "reg_filings"
+						%li.lmenuitem.dropdown_listbutton= link_to "Shareholder Services", controller: "public", action: "share_services"
+						%li.lmenuitem.dropdown_listbutton= link_to "Links", controller: "public", action: "links"
+				///////Contact////////
+				%li= link_to "Contact", controller: "public", action: "contact"
+								

@@ -1,12 +1,14 @@
 /*---OVERRIDES---*/
-$mainfont: Muli,'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+$mainfont: Oswald, sans-serif;
+$mainfontweight: 600;
+$boldfontweight: 900;
 
 /*---BOOT---*/
 @import "bootstrap";
 
 /*---BUTTONS---*/
 .btn-sq {
-  @extend .btn-primary;
+  @extend .btn-default;
   background-color: #333;
   border-radius: 0px;
 }
@@ -15,7 +17,7 @@ $mainfont: Muli,'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 /*-------NAVBAR-----------*/
 .navbar-sas{
 	@extend .navbar-default;
-	background-color: #eee;
+	background-color: #ddd;
 	float: left;
 	border: 0;
 }

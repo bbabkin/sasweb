@@ -15,6 +15,11 @@ class Subscriber < ActiveRecord::Base
   scope :search, lambda {|query|
     where(["name LIKE ?", "%#{query}%"])
   }
-
-
+  def self.to_csv
+    CSV.generate do |csv|
+        all.each do |subscriber|
+         csv << subscriber.attributes.values_at("email")
+  end
+end
+end
 end

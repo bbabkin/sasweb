@@ -1,9 +1,9 @@
 - @page_title = "Image contents"
-= link_to("Back to admin menu", admin_path, :class => 'btn btn-primary')
+= link_to("Back to admin menu", admin_path, :class => 'btn btn-xs btn-default')
 %br
 %br
 .news.index
-  = link_to("Add new Image Content", {:action => 'new'}, :class => 'btn btn-success') 
+  = link_to("Add new Image Content", {:action => 'new'}, :class => 'btn btn-xs btn-success') 
   
   %table.admintable{:summary => "Text contents"}
     %tr.icontent
@@ -17,7 +17,7 @@
         %td= image_tag icontent.image.thumb.url
         %td= icontent.description
         %td.actions
-          = link_to("Edit", edit_admin_icontent_path(icontent), class: "btn btn-primary")
-          = link_to("Delete", delete_admin_icontent_path(icontent), class: "btn btn-danger")
+          = link_to("Edit", edit_admin_icontent_path(icontent), class: "btn btn-xs btn-default")
+          = link_to("Delete", delete_admin_icontent_path(icontent), class: "btn btn-xs btn-danger")
 
 

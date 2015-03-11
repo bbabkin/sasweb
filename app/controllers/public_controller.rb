@@ -1,11 +1,20 @@
 class PublicController < ApplicationController
 layout 'public'
+before_action :emailcount
  #==GENERAL=========
   def index
     @tcontent = Tcontent.find_by stringid: 1
     @carouselimages = CarouselImage.sorted
-  end
 
+
+  end
+  def create
+    @subscriber = Subscriber.new(subscriber_params)
+      if @subscriber.save
+      flash[:notice] = "Subscriber created successfully."
+      redirect_to(:action => 'index')
+    end
+  end
   def news
     @newsitems = NewsItems.all
   end
@@ -103,7 +112,27 @@ layout 'public'
   def privacy_policy
     @tcontent = Tcontent.find_by stringid: 24
   end
+  #-----==========GLOBAL VARS==========--------#
+  
+  @subscriber = Subscriber.new()
+  def create 
+  @subscriber = Subscriber.new(subscriber_params)  
+  if @subscriber.save
+    flash[:notice] = "E-mail added successfully."
+    redirect_to :action => :index
+  end
+end
 
+  #8==>--- PRIVATES
 
+private
+
+  def subscriber_params
+    params.require(:subscriber).permit(:email)
+  end
+
+  def emailcount
+    @emailcount = Subscriber.count + 1
+  end
 
 end

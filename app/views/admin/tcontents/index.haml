@@ -1,9 +1,9 @@
 - @page_title = "Text contents"
-= link_to("Back to admin menu", admin_path, :class => 'btn btn-primary')
+= link_to("Back to admin menu", admin_path, :class => 'btn btn-xs btn-default')
 %br
 %br
 .news.index
-  = link_to("Add new tcontent (not recommended)", {:action => 'new'}, :class => 'btn btn-success') 
+  = link_to("Add new tcontent (not recommended)", {:action => 'new'}, :class => 'btn btn-xs btn-success') 
   
   %table.admintable{:summary => "Text contents"}
     %tr.tcontent
@@ -17,7 +17,7 @@
         %td= tcontent.stringid
         %td= tcontent.data.html_safe
         %td.actions
-          = link_to("Edit", edit_admin_tcontent_path(tcontent), class: "btn btn-primary")
-          = link_to("Delete", delete_admin_tcontent_path(tcontent), class: "btn btn-danger")
+          = link_to("Edit", edit_admin_tcontent_path(tcontent), class: "btn btn-xs btn-default")
+          = link_to("Delete", delete_admin_tcontent_path(tcontent), class: "btn btn-xs btn-danger")
 
 

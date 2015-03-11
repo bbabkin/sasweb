@@ -22,7 +22,7 @@ class Admin::FileEntriesController < ApplicationController
 
   def create
     @fileentry = FileEntry.new(file_entry_params)
-      if @fileentry.save
+    if @fileentry.save
       flash[:notice] = "File created successfully."
       redirect_to(:action => 'index')
     else

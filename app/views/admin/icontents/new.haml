@@ -1,6 +1,6 @@
 - @page_title = "New Image Content"
-= link_to("Back to Image Content List", {:action => 'index'}, :class => 'btn btn-primary')
+= link_to("Back to Image Content List", {:action => 'index'}, :class => 'btn btn-xs btn-default')
 = form_for [:admin, @icontent], :html => {:multipart => true} do |f|
 	= render(:partial => "form", :locals => {:f => f})
 	.form-buttons
-		= submit_tag("Create New Image Content", :class => 'btn btn-primary')
+		= submit_tag("Create New Image Content", :class => 'btn btn-xs btn-default')

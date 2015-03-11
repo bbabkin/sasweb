@@ -1,6 +1,5 @@
 - @page_title = "Team Members"
-%br
-= link_to("Add new team member", {:action => 'new'}, :class => 'btn btn-success') 
+= link_to("Add new team member", {:action => 'new'}, :class => 'btn btn-xs btn-success') 
 
 %table.admintable{:summary => "Staff list"}
 	%tr.header
@@ -21,8 +20,8 @@
 			-else
 				%td Manager
 			%td.actions
-				= link_to("Show", admin_staff_entry_path(staffentry), class: "btn btn-primary")
-				= link_to("Edit", edit_admin_staff_entry_path(staffentry), class: "btn btn-primary")
-				= link_to("Delete", delete_admin_staff_entry_path(staffentry), class: "btn btn-danger")
+				= link_to("Show", admin_staff_entry_path(staffentry), class: "btn btn-xs btn-default")
+				= link_to("Edit", edit_admin_staff_entry_path(staffentry), class: "btn btn-xs btn-default")
+				= link_to("Delete", delete_admin_staff_entry_path(staffentry), class: "btn btn-xs btn-danger")
 
 

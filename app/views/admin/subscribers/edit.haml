@@ -1,0 +1,8 @@
+- @page_title = "Update Subscriber Email"
+= link_to("<< Back to Subscriber List", {:action => 'index', :class => 'back-link'})
+.news.new
+  %h2 Edit Subscriber's Email
+  = form_for [:admin, @subscriber], :html => {:multipart => true} do |f|
+    = render(:partial => "form", :locals => {:f => f})
+    .form-buttons
+      = submit_tag("Edit")

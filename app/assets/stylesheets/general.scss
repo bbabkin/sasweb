@@ -1,13 +1,11 @@
 /*---OVERRIDES---*/
-$mainfont: Muli,'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+$mainfont: Oswald, sans-serif;
 
 html { 
-	background-color: #eee;
 	min-height: 100%;
 }
 body{
-	min-height: 100%;
-	font-size:100%;
+	font-size:0.8em;
 	font-family: $mainfont !important;
 }
 	// -webkit-background-size: cover; 
@@ -16,8 +14,6 @@ body{
 	// -o-background-size: cover;
 
 .mainbox { 
-	min-height: 100%;
-	background-color: #eee; 
 
 }
 .rule {
@@ -33,16 +29,13 @@ body{
 	border-width: 1px;
 	border-color: white;    
 }
-
-.pad { 
-	
+.pad { 	
 }
 .nopad {
 	padding: 0px !important;
 	
-} .tabl td { padding: 5px;} 
-img { border: none; } 
-
+} 
+.tabl td { padding: 5px;}  
 .clear { clear: both; } 
 .center {    text-align: center;    ; }
 .floatleft {   float:left; } 
@@ -81,6 +74,42 @@ padding: 0;   margin: 0;   border: 0px; }
 
 
 /*--------============ADMIN===========-----------*/
+.adminheader {
+    font-size: 1.4em ;
+    padding: 10px;
+    font-weight: 900;
+    font: #fff;
+}
+.admintable {
+    th{
+        background-color: #ddd;
+        text-align: center;
+        font-weight: 900;
+        border-width: 1px;
+        border-color: #555;
+        border-style: solid;
+        padding: 15px;
+    }
+    td{
+        border-width: 1px;
+        border-color: #555;
+        border-style: solid;
+        padding: 15px;
+    }
+
+    margin: 0 auto;
+    padding: 15px;
+    border-width: 2px;
+    border-color: #333;
+    border-style: solid;
+}
+
+
+
+
+
+/*-----======= Sidebar Stuff ======------*/
+
 .feedback {
     background-color: #8f8 !important;
     border-color: #0f0;
@@ -177,6 +206,10 @@ padding: 0;   margin: 0;   border: 0px; }
     color: #fff;
     background: none;
 }
+
+
+
+
 
 @media(min-width:768px) {
     #wrapper {

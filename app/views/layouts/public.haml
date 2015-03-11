@@ -6,7 +6,7 @@
     %meta{:content => "vis.works", :name => "author"}/
     %title
       St. Andrew Goldfields Ltd.#{" | #{@page_title}" if @page_title}
-    %link{:href => "https://fonts.googleapis.com/css?family=Droid+Sans", :rel => "stylesheet"}/
+    %link{:href => "https://fonts.googleapis.com/css?family=Oswald:400,700,300", :rel => "stylesheet"}/
     = stylesheet_link_tag "application", media: 'all'
     = javascript_include_tag "application"
     
@@ -18,16 +18,17 @@
     .mainbox.nopad
       .container.nav.nopad
         = render :partial => 'layouts/navigation'
-        .container.container-fluid.maincont.nopad
-          %hr.greyhr.nopad
-          = yield
-        .clear
+    .container.maincont.nopad
+      .clear
+      = yield
+      
     %footer.footer
-      .container
+      .footercontainer
         %ul.footerlist
           %li=link_to "Disclaimer", controller: "public", action: "disclaimer"
           %li=link_to "Privacy Policy", controller: "public", action: "privacy_policy"
-          %li © 2015 St.Andrew Goldfields Ltd.
-          %li.form-group.form-inline.form-group-sm.footerform
-            %label{:for => "InputEmail1"} Subscribe
-            %input#InputEmail1.form-control-sm{:placeholder => "your@email.com", :type => "email"}/
+          %li © 2015 ST ANDREW GOLDFIELDS LTD.
+        .subscribeform.form-inline 
+          =form_for [Subscriber.new()], :class => "form-inline" do |f|
+            = f.text_field(:email , :size=> '20x1',:placeholder => "subscribe to our e-news")
+            = submit_tag("ok", :class => 'subscribesubmit')

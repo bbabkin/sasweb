@@ -1,9 +1,9 @@
 - @page_title = "News"
-= link_to("Back to admin menu", admin_path, :class => 'btn btn-primary')
+= link_to("Back to admin menu", admin_path, :class => 'btn btn-xs btn-default')
 %br
 %br
 .news.index
-	= link_to("Add new Data (not recommended)", {:action => 'new'}, :class => 'btn btn-success') 
+	= link_to("Add new Data (not recommended)", {:action => 'new'}, :class => 'btn btn-xs btn-success') 
 	
 	%table.admintable{:summary => "Article list"}
 		%tr.header
@@ -32,8 +32,8 @@
 				- mineraldata.mine_data.each do |dataentry|
 					%td= dataentry
 				%td.actions
-					= link_to("Show", admin_mineral_datum_path(mineraldata), class: "btn btn-primary")
-					= link_to("Edit", edit_admin_mineral_datum_path(mineraldata), class: "btn btn-primary")
-					= link_to("Delete", delete_admin_mineral_datum_path(mineraldata), class: "btn btn-danger")
+					= link_to("Show", admin_mineral_datum_path(mineraldata), class: "btn btn-xs btn-default")
+					= link_to("Edit", edit_admin_mineral_datum_path(mineraldata), class: "btn btn-xs btn-default")
+					= link_to("Delete", delete_admin_mineral_datum_path(mineraldata), class: "btn btn-xs btn-danger")
 
 

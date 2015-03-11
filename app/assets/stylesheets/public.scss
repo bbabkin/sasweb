@@ -1,28 +1,33 @@
-/*---=====OVERRIDES=====---*/
-$mainfont: Muli,'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-$mainfontweight: 600;
-$boldfontweight: 900;
-$navbarCollapseWidth: 300px;
-$grid-float-breakpoint: 600px;
+/*---=====  OVERRIDES  =====---*/
 
 @import "general.scss";
+/*---======== MAIN =======---*/
+body { padding-top: 170px; }
+img { border: none; }
+
+/*------===========  NAVIGATION =========------------*/
+.nav{
+}
+
+
+.topnav{
+	background-color: #0f0 !important;
+	padding: 0;
+	margin: 0;
+}
 
 
 
+/*--------=========  FOOTER  ========---------*/
+.footerconteiner{
+	max-width: 300px !important;
 
-
-
-
-
-
-
-
-
-
-
-/*--------=========FOOTER========---------*/
-
+}
 .footer {
+	background-color: #ccc;
+	font-size: 0.8em;
+	text-align: center;
+display: inline !important; 
   position: absolute;
   border-top-color: #000;
   border-top-width: 1px;
@@ -30,16 +35,20 @@ $grid-float-breakpoint: 600px;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 32px;
-  background-color: #f5f5f5;
+  height: 30px;
   margin: 0;
-  padding: 0;
+  padding-top: 3px;
+}
+.subscribeform{ 
+	display: inline-block;
+	padding: 0;
+	margin: 0;
 }
 .footerlist{
+	display: inline-block;
 	padding-top: 4px;
 	padding-bottom: 0px;
 	margin: 0;
-width: 100%;
 text-align: center;
 list-style-type: none;
 	li {

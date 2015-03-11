@@ -1,0 +1,16 @@
+- @page_title = "Subscribers List"
+.news.index
+  = link_to("Add new subscriber", {:action => 'new'}, :class => 'btn btn-xs btn-success') 
+  
+  %table.admintable{:summary => "Text contents"}
+    %tr
+      %th Subscriber List:
+      %th Actions
+    - @subscribers.each do |subscriber|
+      %tr{:class => cycle('odd', 'even')}
+        %td= subscriber.email
+        %td.actions
+          = link_to("Edit", edit_admin_subscriber_path(subscriber), class: "btn btn-xs btn-default")
+          = link_to("Delete", delete_admin_subscriber_path(subscriber), class: "btn btn-xs btn-danger")
+  %p= link_to("export list as a csv file","subscribers.csv" , class: "btn btn-xs btn-default")
+

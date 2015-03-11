@@ -1,0 +1,8 @@
+- @page_title = "Delete Subscriber"
+= link_to("<< Back to List", {:action => 'index',}, :class => 'back-link')
+.content.delete
+  %h2 Delete Subscriber
+  = form_for(:subscriber, :method => :delete, :url => {:action => 'destroy', :id => @subscriber.id}) do |f|
+    %p.reference-name= @subscriber.email
+    .form-buttons
+      = submit_tag("Delete")
